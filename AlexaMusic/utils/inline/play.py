@@ -40,7 +40,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text="‹ السورس ›", url=f"https://t.me/ZZZ7iZ"
+                text="", url=f"https://t.me/ZZZ7iZ"
             ),
         ],
         [
@@ -48,7 +48,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(text="‹ شروحات السورس ›", url=f"https://t.me/ZZZ7iZ"),
+            InlineKeyboardButton(text="", url=f"https://t.me/ZZZ7iZ"),
         ],
         [
             InlineKeyboardButton(
@@ -65,20 +65,20 @@ def telegram_markup_timer(_, chat_id, played, dur):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(text="", url=f"https://t.me/Jankari_Ki_Duniya"),
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
             InlineKeyboardButton(text="", url=f""),
@@ -94,14 +94,14 @@ def stream_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(text="", url=f""),
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
             InlineKeyboardButton(text="", url=f""),
@@ -114,10 +114,10 @@ def telegram_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text=_["‹ قائمة التحكم ›"],
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
+            InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
         ],
     ]
     return buttons
