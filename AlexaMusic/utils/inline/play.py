@@ -55,7 +55,8 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 url=f"https://t.me/Alexa_ManagementBot",
                 )
         ],
-        [
+    [
+        
     return buttons
 
 def telegram_markup_timer(_, chat_id, played, dur):
