@@ -46,6 +46,9 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
+          ),
+            InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),      
+            
             ),
             InlineKeyboardButton(text="", url=f"https://t.me/ZZZ7iZ"),
         ],
@@ -79,6 +82,8 @@ def telegram_markup_timer(_, chat_id, played, dur):
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
+                ),
+            InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
             ),
             InlineKeyboardButton(text="", url=f""),
         ],
@@ -102,6 +107,8 @@ def stream_markup(_, videoid, chat_id):
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
+                ),
+            InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
             ),
             InlineKeyboardButton(text="", url=f""),
         ],
@@ -113,7 +120,7 @@ def telegram_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["‹ قائمة التحكم ›"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
             InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
