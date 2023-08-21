@@ -31,8 +31,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
-                callback_data="GetTimer",
-            )
+                callback_data="GetTimer",            
         ],
         [
             InlineKeyboardButton(
