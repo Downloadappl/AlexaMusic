@@ -126,7 +126,7 @@ async def start_comm(client, message: Message, _):
         if name[0:3] == "del":
             await del_plist_msg(client=client, message=message, _=_)
         if name[0:3] == "inf":
-            m = await message.reply_text("🔎")
+            m = await message.reply_text("**🔎 حسنا جاري البحث!**")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -140,23 +140,23 @@ async def start_comm(client, message: Message, _):
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-😲**ᴛʀᴀᴄᴋ ɪɴғᴏʀɴᴀᴛɪᴏɴ**😲
+**‹ معلومات الفيديو ⤈**
 
-📌**ᴛɪᴛʟᴇ:** {title}
+**اسم الفيديو : ‹** {title} ›
 
-⏳**ᴅᴜʀᴀᴛɪᴏɴ:** {duration} ᴍɪɴᴜᴛᴇs
-👀**ᴠɪᴇᴡs:** `{views}`
-⏰**ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ:** {published}
-🎥**ᴄʜᴀɴɴᴇʟ:** {channel}
-📎**ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
-🔗**ʟɪɴᴋ:** [ᴡᴀᴛᴄʜ ᴏɴ ʏᴏᴜᴛᴜʙᴇ]({link})
+**مده الفيديو : ‹** {duration} ›
+**المشاهدات : ‹** {views} ›
+**وقت النشر : ‹** {published} ›
+**اسم القناة : ‹** {channel} ›
+**رابط القناة :** [ ‹ اضغط هنا ›]({channellink})
+**رابط الفيديو : ** [ ‹ اضغط هنا ›]({link})
 
-💖 sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {config.MUSIC_BOT_NAME}"""
+‹ تم البحث بواسطة : {config.MUSIC_BOT_NAME} ›"""
             key = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ʏᴏᴜᴛᴜʙᴇ •", url=f"{link}"),
-                        InlineKeyboardButton(text="• ᴄʟᴏsᴇ •", callback_data="close"),
+                        InlineKeyboardButton(text="‹ مشاهده الفيديو › ", url=f"{link}"),
+                        InlineKeyboardButton(text="‹ اغلاق القائمه ›", callback_data="close"),
                     ],
                 ]
             )
@@ -276,13 +276,20 @@ async def welcome(client, message: Message):
             return
 
 
-@app.on_message(commandpro(["/alive", "Alexa"]) & ~filters.edited)
+@app.on_message(commandpro(["سورس", "السورس") & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/125f531d44a9999290cac.jpg",
-        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ ʜᴇʟʟᴏ, ᴀʟᴇxᴀ ɪs ᴡᴏʀᴋɪɴɢ ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n✪ ᴛʜᴀɴᴋs ᴛᴏ ʏᴜᴋᴋɪ ᴛᴇᴀᴍ 🌼 ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ ᴏᴡɴᴇʀ    : [ᴀsᴀᴅ ᴀʟɪ](https://t.me/Dr_Asad_Ali)\n┣★ ᴜᴘᴅᴀᴛᴇs › : [ᴀʟᴇxᴀ ʜᴇʟᴘ](https://t.me/Alexa_BotUpdates)┓\n┣★ ʀᴇᴘᴏ › : [ᴀʟᴇxᴀ ʀᴇᴘᴏ](https://github.com/jankarikiduniya/AlexaMusic)\n┗━━━━━━━━━━━━━━━━━┛\n\n💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴛʜᴇɴ\nᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](https://t.me/Jankari_Ki_Duniya) ᴍᴀᴋᴇ sᴜʀᴇ ᴛᴏ sᴛᴀʀ ᴏᴜʀ ᴘʀᴏᴊᴇᴄᴛ ...\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
+        photo=f"https://telegra.ph/file/4c06fb759f30421538058.jpg",
+        caption=f"""
+[𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙋𝘼𝙍𝙆](https://t.me/ZZZ7iZ)
+ —————————————
+[ 𝙃 𝘼 𝙈 𝘿](https://t.me/IIIlIIv)
+ 
+[𓏺𝐏𝐎𝐓 𖠙 𝙎𝙊𝙐𝙍𝘾𝙀](https://t.me/IIIlIIv)
+  
+[ ⍟𓏺𝙒𝞝𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙋𝘼𝙍𝙆](https://t.me/ZZZ7iZ)""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=f"https://t.me/Alexa_Help")]]
+            [[InlineKeyboardButton("‹ السورس ›", url=f"https://t.me/ZZZ7iZ")]]
         ),
     )
 
@@ -291,7 +298,7 @@ async def start(client: Client, message: Message):
 async def start(client: Client, message: Message):
     if await is_served_user(message.from_user.id):
         await message.reply_text(
-            text="😂 ᴅᴇᴀʀ ʏᴏᴜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴠᴇʀɪғɪᴇᴅ",
+            text="**عزيزي ، لقد تم التحقق من صدقك بالفعل**",
         )
         return
     await add_served_user(message.from_user.id)
