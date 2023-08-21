@@ -73,7 +73,7 @@ VARS_COMMAND : ["vars", "config"]
 
 
 #Basic Bot Commands
-UPDATE_COMMAND : ["update"]
+UPDATE_COMMAND : ["تحديث"]
 REBOOT_COMMAND : ["restart"]
 AUTOEND_COMMAND : ["autoend"]
 
