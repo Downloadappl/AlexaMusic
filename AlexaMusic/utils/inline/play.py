@@ -30,29 +30,29 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text=" ᴏᴡɴᴇʀ 💞", url=f"https://t.me/Jankari_Ki_Duniya"
+                text="", url=f"https://t.me/Jankari_Ki_Duniya"
             ),
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="", url=f"https://t.me/Alexa_Help"),
         ],
         [
             InlineKeyboardButton(
-                text=f"☀ ᴀʟᴇxᴀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ☀",
+                text=f"",
                 url=f"https://t.me/Alexa_ManagementBot",
             )
         ],
@@ -65,23 +65,23 @@ def telegram_markup_timer(_, chat_id, played, dur):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="ᴏᴡɴᴇʀ 💞", url=f"https://t.me/Jankari_Ki_Duniya"),
+            InlineKeyboardButton(text="", url=f"https://t.me/Jankari_Ki_Duniya"),
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="", url=f"https://t.me/Alexa_Help"),
         ],
     ]
     return buttons
@@ -94,17 +94,17 @@ def stream_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="ᴏᴡɴᴇʀ 💞", url=f"https://t.me/Jankari_Ki_Duniya"),
+            InlineKeyboardButton(text="", url=f"https://t.me/Jankari_Ki_Duniya"),
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="", url=f"https://t.me/Alexa_Help"),
         ],
     ]
     return buttons
@@ -114,7 +114,7 @@ def telegram_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
             InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
@@ -125,7 +125,7 @@ def telegram_markup(_, chat_id):
 
 ## By Anon
 close_keyboard = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="〆 ᴄʟᴏsᴇ 〆", callback_data="close")]]
+    [[InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close")]]
 )
 
 ## Search Query Inline
@@ -157,11 +157,11 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["P_B_1"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
-                text=_["P_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
             ),
         ],
@@ -248,52 +248,54 @@ def panel_markup_1(_, videoid, chat_id):
                 text="▷",
                 callback_data=f"ADMIN Resume|{chat_id}",
             ),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="⏸ ايقاف مؤقت ⤈", callback_data=f"ADMIN Pause|{chat_id}"),
+            ],
+            [
+            InlineKeyboardButton(text="⏯ تخطي ⤈", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="⏹ انهاء • ايقاف ⤈", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text=_["S_B_3"],
+                text="",
                 url=f"{SUPPORT_GROUP}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⇆ sʜᴜғғʟᴇ ⇆",
+                text="",
                 callback_data=f"ADMIN Shuffle|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="↻ ʟᴏᴏᴩ ↻", callback_data=f"ADMIN Loop|{chat_id}"
+                text="", callback_data=f"ADMIN Loop|{chat_id}"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⏮ 10 sᴇᴄᴏɴᴅ",
+                text="⏮ 𝟏𝟎 ثواني ⤈",
                 callback_data=f"ADMIN 1|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="⏭ 10 sᴇᴄᴏɴᴅ",
+                text="⏭ 𝟏𝟎 ثواني ⤈",
                 callback_data=f"ADMIN 2|{chat_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⏮ 30 sᴇᴄᴏɴᴅ",
+                text="⏮ 𝟑𝟎 ثواني ⤈",
                 callback_data=f"ADMIN 3|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="⏭ 30 sᴇᴄᴏɴᴅ",
+                text="⏭ 𝟑𝟎 ثواني ⤈",
                 callback_data=f"ADMIN 4|{chat_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="↻ ʙᴀᴄᴋ ↻",
+                text="‹ رجوع ›",
                 callback_data=f"MainMarkup {videoid}|{chat_id}",
             ),
         ],
@@ -311,14 +313,16 @@ def queue_markup(_, videoid, chat_id):
                 text="▷",
                 callback_data=f"ADMIN Resume|{chat_id}",
             ),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="☆", callback_data=f"add_playlist {videoid}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="⏸ ايقاف مؤقت ⤈", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="▶️ استئناف ⤈", callback_data=f"add_playlist {videoid}"),
+            ],
+        [
+            InlineKeyboardButton(text="⏯ تخطي ⤈", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="⏹ انهاء • ايقاف ⤈", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
         [
             InlineKeyboardButton(
-                text="〆 ᴄʟᴏsᴇ 〆", callback_data=f"ADMIN CloseA|{chat_id}"
+                text="‹ اغلاق ›", callback_data=f"ADMIN CloseA|{chat_id}"
             )
         ],
     ]
