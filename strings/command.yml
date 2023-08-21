@@ -9,7 +9,7 @@ STATS_COMMAND : ["stats"]
 LANGUAGE_COMMAND : ["lang", "language", "langs"]
 
 # Play Commands
-PLAY_COMMAND : ["play", "fuck", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce"]
+PLAY_COMMAND : ["play", "fuck", "vplay", "تشغيل", "شغل", "playforce", "vplayforce", "cplayforce", "cvplayforce"]
 PLAYMODE_COMMAND : ["playmode"]
 CHANNELPLAY_COMMAND : ["channelplay"]
 STREAM_COMMAND : ["stream", "cstream", "streamforce"]
@@ -64,7 +64,7 @@ MAINTENANCE_COMMAND : ["maintenance"]
 LOGGER_COMMAND : ["logger"]
 
 #Heroku
-GETLOG_COMMAND : ["get_log", "logs", "getlog", "log"]
+GETLOG_COMMAND : ["", "logs", "getlog", "log"]
 GETVAR_COMMAND : ["get_var", "getvar", "showvar"]
 DELVAR_COMMAND : ["del_var", "delvar"]
 SETVAR_COMMAND : ["set_var", "setvar", "addvar"]
