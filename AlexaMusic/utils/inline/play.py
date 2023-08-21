@@ -32,7 +32,8 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",            
-
+        ],
+        [
             InlineKeyboardButton(
                 text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
@@ -53,7 +54,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 url=f"https://t.me/Alexa_ManagementBot",
             )
         ],
-    ]
+        [
     return buttons
 
 
@@ -80,7 +81,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
             ),
             InlineKeyboardButton(text="", url=f""),
         ],
-    ]
+        [
     return buttons
 
 
@@ -103,7 +104,7 @@ def stream_markup(_, videoid, chat_id):
             ),
             InlineKeyboardButton(text="", url=f""),
         ],
-    ]
+        [
     return buttons
 
 
@@ -116,7 +117,7 @@ def telegram_markup(_, chat_id):
             ),
             InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
         ],
-    ]
+        [
     return buttons
 
 
@@ -146,7 +147,7 @@ def track_markup(_, videoid, user_id, channel, fplay):
                 callback_data=f"forceclose {videoid}|{user_id}",
             )
         ],
-    ]
+        [
     return buttons
 
 
@@ -172,7 +173,7 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
                 callback_data=f"forceclose {videoid}|{user_id}",
             ),
         ],
-    ]
+        [
     return buttons
 
 
@@ -196,8 +197,8 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
                 text=_["CLOSEMENU_BUTTON"],
                 callback_data=f"forceclose {videoid}|{user_id}",
             ),
-        ],
-    ]
+         ],
+    [
     return buttons
 
 
@@ -312,8 +313,11 @@ def queue_markup(_, videoid, chat_id):
             ),
             InlineKeyboardButton(text="⏸ ايقاف مؤقت ⤈", callback_data=f"ADMIN Pause|{chat_id}"),
             InlineKeyboardButton(text="▶️ استئناف ⤈", callback_data=f"add_playlist {videoid}"),
+        ],
+        [    
+        
             InlineKeyboardButton(text="⏯ تخطي ⤈", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="⏹ انهاء • ايقاف ⤈", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="⏹ انهاء - ايقاف ⤈", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
         [
             InlineKeyboardButton(
