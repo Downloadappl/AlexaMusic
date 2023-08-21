@@ -8,7 +8,7 @@
 # Harshit Sharma
 # All rights reserved. © Alisha © Alexa © Yukki
 
-
+from strings.filters import command 
 import random
 import string
 from ast import ExceptHandler
@@ -44,7 +44,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 
 @app.on_message(
-    filters.command(PLAY_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    command(PLAY_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @PlayWrapper
 async def play_commnd(
@@ -113,9 +113,10 @@ async def play_commnd(
                     message.chat.id,
                     streamtype="telegram",
                     forceplay=fplay,
-                )
+
+)
             except Exception as e:
-                ex_type = type(e).__name__
+                ex_type = type(e).name
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
                 return await mystic.edit_text(err)
             return await mystic.delete()
@@ -161,7 +162,7 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
-                ex_type = type(e).__name__
+                ex_type = type(e).name
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
                 return await mystic.edit_text(err)
             return await mystic.delete()
@@ -207,7 +208,8 @@ async def play_commnd(
             if "track" in url:
                 try:
                     details, track_id = await Spotify.track(url)
-                except Exception:
+
+except Exception:
                     return await mystic.edit_text(_["play_3"])
                 streamtype = "youtube"
                 img = details["thumb"]
@@ -296,7 +298,8 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
-                ex_type = type(e).__name__
+
+ex_type = type(e).name
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
                 return await mystic.edit_text(err)
             return await mystic.delete()
@@ -312,7 +315,7 @@ async def play_commnd(
                     "ᴩʟᴇᴀsᴇ ᴛᴜʀɴ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴛᴏ sᴛʀᴇᴀᴍ ᴜʀʟ.",
                 )
             except Exception as e:
-                return await mystic.edit_text(_["general_3"].format(type(e).__name__))
+                return await mystic.edit_text(_["general_3"].format(type(e).name))
             await mystic.edit_text(_["str_2"])
             try:
                 await stream(
@@ -328,7 +331,7 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
-                ex_type = type(e).__name__
+                ex_type = type(e).name
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
                 return await mystic.edit_text(err)
             return await play_logs(message, streamtype="M3u8 or Index Link")
@@ -387,7 +390,7 @@ async def play_commnd(
                 forceplay=fplay,
             )
         except Exception as e:
-            ex_type = type(e).__name__
+            ex_type = type(e).name
             err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
             return await mystic.edit_text(err)
         await mystic.delete()
@@ -396,7 +399,8 @@ async def play_commnd(
         if plist_type:
             ran_hash = "".join(
                 random.choices(string.ascii_uppercase + string.digits, k=10)
-            )
+
+)
             lyrical[ran_hash] = plist_id
             buttons = playlist_markup(
                 _,
@@ -505,7 +509,8 @@ async def play_music(client, CallbackQuery, _):
             _,
             mystic,
             CallbackQuery.from_user.id,
-            details,
+
+details,
             chat_id,
             user_name,
             CallbackQuery.message.chat.id,
@@ -514,7 +519,7 @@ async def play_music(client, CallbackQuery, _):
             forceplay=ffplay,
         )
     except Exception as e:
-        ex_type = type(e).__name__
+        ex_type = type(e).name
         err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
         return await mystic.edit_text(err)
     return await mystic.delete()
@@ -612,7 +617,7 @@ async def play_playlists_command(client, CallbackQuery, _):
             forceplay=ffplay,
         )
     except Exception as e:
-        ex_type = type(e).__name__
+        ex_type = type(e).name
         err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
         return await mystic.edit_text(err)
     return await mystic.delete()
@@ -631,7 +636,8 @@ async def slider_queries(client, CallbackQuery, _):
         cplay,
         fplay,
     ) = callback_request.split("|")
-    if CallbackQuery.from_user.id != int(user_id):
+
+if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(_["playcb_1"], show_alert=True)
         except:
