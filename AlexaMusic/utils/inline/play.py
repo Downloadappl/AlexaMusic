@@ -30,22 +30,21 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="‹ قوائم التشغيل ›",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
                 text="", url=f"https://t.me/ZZZ7iZ"
-            ),
-        ],
-        [
+         ),   
+
             InlineKeyboardButton(
-                text=_["PL_B_3"],
+                text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
             InlineKeyboardButton(text="", url=f"https://t.me/ZZZ7iZ"),
@@ -75,8 +74,8 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(text="", url=f"https://t.me/Jankari_Ki_Duniya"),
-        ],
-        [
+        
+        
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
@@ -98,8 +97,8 @@ def stream_markup(_, videoid, chat_id):
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(text="", url=f""),
-        ],
-        [
+        
+
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
@@ -230,7 +229,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
                 callback_data=f"forceclose {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text=">",
+                text="",
                 callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
         ],
@@ -245,30 +244,32 @@ def panel_markup_1(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text=">",
+                text="",
                 callback_data=f"ADMIN Resume|{chat_id}",
             ),
             InlineKeyboardButton(text="▶️ استئناف ⤈", callback_data=f"ADMIN Pause|{chat_id}"),
             InlineKeyboardButton(text="⏯ تخطي ⤈", callback_data=f"ADMIN Skip|{chat_id}"),
+                    ],
+                    [
             InlineKeyboardButton(text="⏹ انهاء • ايقاف ⤈", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="",
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-                text=_["S_B_3"],
+                text="",
                 url=f"{SUPPORT_GROUP}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⇆ sʜᴜғғʟᴇ ⇆",
+                text="",
                 callback_data=f"ADMIN Shuffle|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="↻ ʟᴏᴏᴩ ↻", callback_data=f"ADMIN Loop|{chat_id}"
+                text="", callback_data=f"ADMIN Loop|{chat_id}"
             ),
         ],
         [
