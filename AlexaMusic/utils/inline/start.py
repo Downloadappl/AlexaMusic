@@ -94,5 +94,6 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
                     InlineKeyboardButton(text="‹ : المطور : ›", user_id=OWNER),
                 ]
             )
-    InlineKeyboardButton(
-                text="لتنصيب بوت", url=f"https://t.me/IIIlIIv"
+    buttons.append([InlineKeyboardButton(text="", callback_data="https://t.me/IIIlIIv")])
+    return buttons
+
