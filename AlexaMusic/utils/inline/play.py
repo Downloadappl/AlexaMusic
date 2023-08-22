@@ -104,8 +104,10 @@ def stream_markup(_, videoid, chat_id):
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
-            ),
-            InlineKeyboardButton(text="‹ السورس ›", url=f"https://t.me/ZZZ7iZ"),
+            ),            
+            ],
+            [
+            InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
         ],
     ]
            
