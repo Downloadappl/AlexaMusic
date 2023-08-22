@@ -47,7 +47,11 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(text="", url=f"https://t.me/Alexa_Help"),
+            
+            ],
+            [
+            InlineKeyboardButton(
+                text="‹ اغلاق ›", callback_data=f"ADMIN CloseA|{chat_id}"
         ],
         [
             InlineKeyboardButton(
@@ -79,7 +83,11 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text="", url=f"https://t.me/Alexa_Help"),
+            
+            ],
+            [
+            InlineKeyboardButton(
+                text="‹ اغلاق ›", callback_data=f"ADMIN CloseA|{chat_id}"
         ],
     ]
     return buttons
@@ -114,7 +122,7 @@ def telegram_markup(_, chat_id):
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
+            InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
         ],
     ]
     return buttons
