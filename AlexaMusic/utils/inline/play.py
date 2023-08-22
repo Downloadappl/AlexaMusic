@@ -105,8 +105,9 @@ def stream_markup(_, videoid, chat_id):
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text="", url=f"https://t.me/Alexa_Help"),
-       
+            InlineKeyboardButton(text="‹ السورس ›", url=f"https://t.me/ZZZ7iZ"),
+        ],
+    ]
            
     return buttons
 
