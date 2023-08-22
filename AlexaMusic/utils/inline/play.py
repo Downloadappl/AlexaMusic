@@ -107,7 +107,7 @@ def stream_markup(_, videoid, chat_id):
             ),
             InlineKeyboardButton(text="", url=f"https://t.me/Alexa_Help"),
        
-           InlineKeyboardButton(text="‹ اغلاق ›", callback_data="close"),
+           
     return buttons
 
 
