@@ -42,8 +42,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             InlineKeyboardButton(
                 text="", url=f"https://t.me/Jankari_Ki_Duniya"
             ),
-        ],
-        [
+        
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
@@ -75,8 +74,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(text="", url=f"https://t.me/Jankari_Ki_Duniya"),
-        ],
-        [
+        
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
@@ -98,8 +96,7 @@ def stream_markup(_, videoid, chat_id):
                 callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(text="", url=f"https://t.me/Jankari_Ki_Duniya"),
-        ],
-        [
+        
             InlineKeyboardButton(
                 text="‹ قائمة التحكم ›",
                 callback_data=f"PanelMarkup None|{chat_id}",
