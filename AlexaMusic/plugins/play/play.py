@@ -8,8 +8,8 @@
 # Harshit Sharma
 # All rights reserved. © Alisha © Alexa © Yukki
 
-from strings.filters import command 
-import random
+
+import strings.filters random
 import string
 from ast import ExceptHandler
 
@@ -44,7 +44,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 
 @app.on_message(
-    command(PLAY_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(PLAY_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @PlayWrapper
 async def play_commnd(
