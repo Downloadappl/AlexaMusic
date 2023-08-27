@@ -9,7 +9,7 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
-import strings.filters random
+import random
 import string
 from ast import ExceptHandler
 
