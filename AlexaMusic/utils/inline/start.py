@@ -79,7 +79,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
             [
                 InlineKeyboardButton(text="‹ : المطور : ›", user_id=OWNER),
            [ 
-        )
+               
     else:
         if GITHUB_REPO:
             buttons.append(
