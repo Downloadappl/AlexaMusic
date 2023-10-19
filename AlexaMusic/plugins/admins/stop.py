@@ -1,6 +1,7 @@
 
 from pyrogram import filters
 from pyrogram.types import Message
+from strings.filters import command
 
 from config import BANNED_USERS
 from strings import get_command
@@ -26,7 +27,7 @@ STOP_COMMAND = get_command("STOP_COMMAND")
 
 
 @app.on_message(
-    filters.command(STOP_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    command(STOP_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def stop_music(cli, message: Message, _, chat_id):
