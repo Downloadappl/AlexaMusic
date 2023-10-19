@@ -78,9 +78,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         buttons.append(
             [
                 InlineKeyboardButton(text="‹ : المطور : ›", user_id=OWNER),
-                InlineKeyboardButton(
-                text="‹ قناة السورس ›", url=f"https://t.me/{SUPPORT_CHANNEL}"
-            
+           [ 
         )
     else:
         if GITHUB_REPO:
