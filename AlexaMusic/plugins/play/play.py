@@ -12,7 +12,6 @@
 import random
 import string
 from ast import ExceptHandler
-from import command
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
