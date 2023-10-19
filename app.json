@@ -23,6 +23,11 @@
         "value": "",
         "required": true
       },
+      "SUPPORT_CHANNEL": {
+        "description": "معرف قناتك بدون @",
+        "value": "ZZZ7iZ",
+        "required": true          
+      },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
         "value": "",
