@@ -28,6 +28,11 @@
         "value": "",
         "required": true
       },
+      "START_IMG_URL": {
+        "description": "صورة الستارت",
+        "value": "https://telegra.ph/file/839cbe67ff070e5ff3b72.jpg",
+        "required": true
+      },
       "OWNER_ID": {
         "description": "The user id(s) of user(s) whom you would like to add as a OWNER. Multiple values shall be seperated with a space.",
         "value": "5303133436",
