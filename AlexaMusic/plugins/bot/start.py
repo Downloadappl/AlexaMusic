@@ -303,9 +303,9 @@ async def start(client: Client, message: Message):
         return
     await add_served_user(message.from_user.id)
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/7f08acd78577f99f60ff5.png",
-        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ **ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴ** 🎉\n✪ ɴᴏᴡ ʏᴏᴜ ᴀʀᴇ ᴀʟᴇxᴀ ᴠᴇʀɪғɪᴇᴅ ᴍᴇᴍʙᴇʀ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ ᴇɴᴊᴏʏ ᴏᴜʀ sᴇʀᴠɪᴄᴇ ᴀɴᴅ ᴘʟᴀʏ ᴍᴜsɪᴄ 🌼 ..\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
+        photo=f"https://telegra.ph/file/a3fada50d9ebe04c757d6.jpg",
+        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n .**تم التحقق من حسابك يمكنك تشغيل الموسيقى بأمان شكرا لك**.\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=f"https://t.me/Alexa_Help")]]
+            [[InlineKeyboardButton("‹ السورس ›", url=f"https://t.me/ZZZ7iZ")]]
         ),
     )
