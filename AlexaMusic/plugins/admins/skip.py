@@ -5,6 +5,7 @@
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
+from strings.filters import command
 
 import config
 from config import BANNED_USERS
@@ -24,7 +25,7 @@ SKIP_COMMAND = get_command("SKIP_COMMAND")
 
 
 @app.on_message(
-    filters.command(SKIP_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    command(SKIP_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def skip(cli, message: Message, _, chat_id):
