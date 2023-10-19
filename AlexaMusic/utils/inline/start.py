@@ -94,6 +94,10 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
                     InlineKeyboardButton(text="‹ : المطور : ›", user_id=OWNER),
                 ]
             )
-    buttons.append([InlineKeyboardButton(text="", callback_data="https://t.me/IIIlIIv")])
+    InlineKeyboardButton(
+                text="‹ قناة السورس ›", url=f"https://t.me/{SUPPORT_CHANNEL}"
+            )
+        ],
+      
+     ]
     return buttons
-
