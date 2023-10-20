@@ -118,6 +118,11 @@ PING_IMG_URL = getenv(
     "assets/Ping.jpeg",
 )
 
+PING_IMG_URL = getenv(
+    "PING_IMG_URL",
+    "assets/Ping.jpeg",
+)
+
 PLAYLIST_IMG_URL = getenv(
     "PLAYLIST_IMG_URL",
     "assets/Playlist.jpeg",
