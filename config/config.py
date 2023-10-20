@@ -28,7 +28,7 @@ SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "ZZZ7iZ")
 
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "乛𝘼𝙇𝙀𝙓𝘼🕊️⃝🦋⁪⁬𝙈𝙐𝙎𝙄𝘾")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "乛𝙈𝙐𝙎𝙄𝘾")
 
 OWNER_ID = list(map(int, getenv("OWNER_ID", "5012406813").split()))
 
@@ -46,8 +46,8 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/H_M_Dr/25")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/ZZZ7iZ")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/IIIlIIv")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/H_M_Dr")
 SUPPORT_ZZ = getenv("SUPPORT_ZZ", "@ZZZ7iZ")
 
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
