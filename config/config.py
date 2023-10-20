@@ -24,13 +24,11 @@ DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "900"))
 
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180"))
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "ZZZ7iZ")
-
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "乛𝙈𝙐𝙎𝙄𝘾")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "乛⁪⁬𝙈𝙐𝙎𝙄𝘾")
 
-OWNER_ID = list(map(int, getenv("OWNER_ID", "5012406813").split()))
+OWNER_ID = list(map(int, getenv("OWNER_ID", "6174058850 5745099463").split()))
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
@@ -46,9 +44,8 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/IIIlIIv")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/H_M_Dr")
-SUPPORT_ZZ = getenv("SUPPORT_ZZ", "@ZZZ7iZ")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/h_m_dr")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/IIIlIIv")
 
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
 
@@ -104,16 +101,6 @@ autoclean = []
 
 START_IMG_URL = getenv(
     "START_IMG_URL", "https://telegra.ph/file/d593c6064ff7657d0c714.jpg"
-)
-
-PING_IMG_URL = getenv(
-    "PING_IMG_URL",
-    "assets/Ping.jpeg",
-)
-
-PING_IMG_URL = getenv(
-    "PING_IMG_URL",
-    "assets/Ping.jpeg",
 )
 
 PING_IMG_URL = getenv(
