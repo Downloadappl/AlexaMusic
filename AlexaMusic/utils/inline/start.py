@@ -30,18 +30,18 @@ def start_pannel(_):
     if SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons.append(
             [
-                InlineKeyboardButton(text="‹ : قناة الشروحات : ›", url=f"{SUPPORT_CHANNEL}"),
-                InlineKeyboardButton(text="‹ : سورس عين : ›", url=f"{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_CHANNEL}"),
+                InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_GROUP}"),
             ]
         )
     else:
         if SUPPORT_CHANNEL:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : قناة الشروحات : ›", url=f"{SUPPORT_CHANNEL}")]
+                [InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_CHANNEL}")]
             )
         if SUPPORT_GROUP:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : سورس عين : ›", url=f"{SUPPORT_GROUP}")]
+                [InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_GROUP}")]
             )
     return buttons
 
@@ -53,18 +53,18 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     if SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons.append(
             [
-                InlineKeyboardButton(text="‹ : قناة الشروحات : ›", url=f"{SUPPORT_CHANNEL}"),
-                InlineKeyboardButton(text="‹ : سورس عين : ›", url=f"{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_CHANNEL}"),
+                InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_GROUP}"),
             ]
         )
     else:
         if SUPPORT_CHANNEL:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : قناة الشروحات : ›", url=f"{SUPPORT_CHANNEL}")]
+                [InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_CHANNEL}")]
             )
         if SUPPORT_GROUP:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : سورس عين : ›", url=f"{SUPPORT_GROUP}")]
+                [InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_GROUP}")]
             )
     buttons.append(
         [
