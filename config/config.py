@@ -106,7 +106,12 @@ if START_IMG_URL:
     if START_IMG_URL != "assets/Ping.jpeg":
         if not re.match("(?:http|https)://", START_IMG_URL):
             START_IMG_URL = getenv("PIC_START")
+)
 
+PING_IMG_URL = getenv(
+    "PING_IMG_URL",
+    "assets/Ping.jpeg",
+)
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
