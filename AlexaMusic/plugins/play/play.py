@@ -15,7 +15,7 @@ from ast import ExceptHandler
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-
+from strings.filters import command
 import config
 from config import BANNED_USERS, lyrical
 from strings import get_command
