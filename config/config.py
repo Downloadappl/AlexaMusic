@@ -102,10 +102,8 @@ clean = {}
 
 autoclean = []
 
-if START_IMG_URL:
-    if START_IMG_URL != "assets/Ping.jpeg":
-        if not re.match("(?:http|https)://", START_IMG_URL):
-            START_IMG_URL = getenv("PIC_START")
+START_IMG_URL = getenv(
+    "START_IMG_URL", "https://telegra.ph/file/d593c6064ff7657d0c714.jpg"
 )
 
 PING_IMG_URL = getenv(
