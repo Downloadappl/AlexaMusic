@@ -12,8 +12,6 @@ from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 from AlexaMusic import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
-from pyrogram.enums import ParseMode, ChatMemberStatus
-
 
 
 @app.on_message(command(["المالك"]) & filters.group)
