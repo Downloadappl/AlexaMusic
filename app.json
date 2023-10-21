@@ -20,7 +20,7 @@
       },
       "API_HASH": {
         "description": "الايبي هاش حط",
-        "value": "16228908",
+        "value": "1e0ebcbec6fb07e5064f54797e0cadb5",
         "required": true          
       },
       "BOT_TOKEN": {
