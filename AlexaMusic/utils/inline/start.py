@@ -31,13 +31,13 @@ def start_pannel(_):
         buttons.append(
             [
                 InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_CHANNEL}"),
-                InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_GROUP}"),
             ]
         )
     else:
         if SUPPORT_CHANNEL:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_CHANNEL}")]
+                [InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_CHANNEL}")]
             )
         if SUPPORT_GROUP:
             buttons.append(
@@ -54,7 +54,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         buttons.append(
             [
                 InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_CHANNEL}"),
-                InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_GROUP}"),
             ]
         )
     else:
@@ -64,7 +64,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
             )
         if SUPPORT_GROUP:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : لشراء بوت : ›", url=f"{SUPPORT_GROUP}")]
+                [InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_GROUP}")]
             )
     buttons.append(
         [
