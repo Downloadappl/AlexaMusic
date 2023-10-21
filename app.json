@@ -47,6 +47,11 @@
         "description": "Mongo DB URL",
         "value": "",
         "required": true
+          },
+      "MUSIC_BOT_NAME": {
+        "description": "اسم بوتك بالعربي",
+        "value": "توم",
+        "required": true
       },
       "STRING_SESSION": {
         "description": "A Pyrogram Session Get It From  Here @Session_Generator_Robot.",
