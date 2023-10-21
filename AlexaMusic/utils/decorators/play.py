@@ -69,18 +69,7 @@ def PlayWrapper(command):
                     caption=_["playlist_1"],
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
-        if message.sender_chat:
-            upl = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="ʜᴏᴡ ᴛᴏ ғɪx ᴛʜɪs ?",
-                            callback_data="AnonymousAdmin",
-                        ),
-                    ]
-                ]
-            )
-            return await message.reply_text(_["general_4"], reply_markup=upl)
+    
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
