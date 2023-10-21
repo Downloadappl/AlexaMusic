@@ -15,12 +15,12 @@
     "env": {
       "API_ID": {
         "description": "الايبي ايدي حط ",
-        "value": "",
+        "value": "16228908",
         "required": true
       },
       "API_HASH": {
         "description": "الايبي هاش حط",
-        "value": "",
+        "value": "16228908",
         "required": true          
       },
       "BOT_TOKEN": {
