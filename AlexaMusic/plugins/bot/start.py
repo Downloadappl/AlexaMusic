@@ -279,17 +279,11 @@ async def welcome(client, message: Message):
 @app.on_message(commandpro(["سورس", "السورس"]) & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4c06fb759f30421538058.jpg",
-        caption=f"""
-[𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙋𝘼𝙍𝙆](https://t.me/ZZZ7iZ)
- —————————————
-[ 𝙃 𝘼 𝙈 𝘿](https://t.me/IIIlIIv)
- 
-[𓏺𝐏𝐎𝐓 𖠙 𝙎𝙊𝙐𝙍𝘾𝙀](https://t.me/IIIlIIv)
-  
-[ ⍟𓏺𝙒𝞝𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙎𝙊𝙐𝙍𝘾𝙀 𝙎𝙋𝘼𝙍𝙆](https://t.me/ZZZ7iZ)""",
+        photo=f"https://telegra.ph/file/d3bed0d2eb1fd5a154369.jpg",
+        caption=f"""**ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ . .
+ sᴏᴜʀᴄᴇ ᴀʟᴏᴍᴅᴀ.**""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("‹ السورس ›", url=f"https://t.me/ZZZ7iZ")]]
+            [[InlineKeyboardButton("sᴏᴜʀᴄᴇ ғᴏх.", url=f"https://t.me/H_M_Dr")]]
         ),
     )
 
