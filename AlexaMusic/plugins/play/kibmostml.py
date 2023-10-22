@@ -130,7 +130,7 @@ async def ihd(client: Client, message: Message):
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/xxx7sss/{rl}"
-    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار نودز لـك",parse_mode="html",
+    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار نيو لـك",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
