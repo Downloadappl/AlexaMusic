@@ -42,7 +42,7 @@ async def maintenance(client, message: Message):
     state = state.lower()
     if state == "enable":
         if await is_maintenance() is False:
-            await message.reply_text("ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ᴍᴏᴅᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ.")
+            await message.reply_text("تم تمكين وضع الصيانة بالفعل")
         else:
             await maintenance_on()
             await message.reply_text(_["maint_2"])
@@ -52,7 +52,7 @@ async def maintenance(client, message: Message):
             await message.reply_text(_["maint_3"])
         else:
             await message.reply_text(
-                "ɪ ᴅᴏɴ'ᴛ ʀᴇᴍᴇᴍʙᴇʀ ᴛʜᴀᴛ ʏᴏᴜ ᴇɴᴀʙʟᴇᴅ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ᴍᴏᴅᴇ."
+                "لا أتذكر أنك قمت بتمكين وضع الصيانة"
             )
     else:
         await message.reply_text(usage)
