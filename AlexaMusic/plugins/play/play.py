@@ -31,7 +31,7 @@ from AlexaMusic.utils.stream.stream import stream
 force_btn = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(
+            
                 text="‹ اشترك الان ›", url="https://t.me/H_M_Dr"
             ),                        
         ],        
