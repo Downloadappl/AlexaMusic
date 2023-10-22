@@ -27,6 +27,26 @@ from AlexaMusic.utils.inline.playlist import botplaylist_markup
 from AlexaMusic.utils.logger import play_logs
 from AlexaMusic.utils.stream.stream import stream
 
+
+force_btn = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(
+                text="‹ اشترك الان ›", url="https://t.me/H_M_Dr"
+            ),                        
+        ],        
+    ]
+)
+
+async def check_is_joined(message):    
+    try:
+        userid = message.from_user.id
+        status = await app.get_chat_member("H_M_Dr", userid)
+        return True
+    except Exception:
+        await message.reply_text("*انت لست مشترك في قناة البوت @H_M_Dr ** \n**انضم لتستطيع تشغيل الاغاني**",reply_markup=force_btn,parse_mode="markdown",disable_web_page_preview=False)
+        return False
+
 # Command
 PLAY_COMMAND = get_command("PLAY_COMMAND")
 
