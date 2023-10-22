@@ -68,7 +68,7 @@ async def bottttt(client, message):
     await message.reply_text(bar)
 
 
-@app.on_message(command("نكته", "نكته"))
+@app.on_message(command("نكته"))
 async def bottttt(client, message):
     selections = ["واحد مشغول أتجوز واحدة مشغولة خلفوا عيل مش فاضيلهم 👻😹",
 "مرة القمر كان عايز يتجوز الشمس قالتله أتجوز واحد صايع طول الليل 👻😹",
@@ -108,7 +108,7 @@ async def bottttt(client, message):
     bar = random.choice(selections)
     await message.reply_text(bar)
 
-@app.on_message(command("لو خيروك", "لو"))
+@app.on_message(command("لو خيروك"))
 async def bottttt(client, message):
     selections = ["لو خيروك |  بين الإبحار لمدة أسبوع كامل أو السفر على متن طائرة لـ 3 أيام متواصلة؟ ",
 "لو خيروك |  بين شراء منزل صغير أو استئجار فيلا كبيرة بمبلغ معقول؟ ",
