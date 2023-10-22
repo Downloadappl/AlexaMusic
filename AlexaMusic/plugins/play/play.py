@@ -31,8 +31,7 @@ from AlexaMusic.utils.stream.stream import stream
 force_btn = InlineKeyboardMarkup(
     [
         [
-            
-            ),                        
+                                    
         ],        
     ]
 )
