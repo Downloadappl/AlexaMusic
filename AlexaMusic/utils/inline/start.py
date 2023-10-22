@@ -21,7 +21,7 @@ def start_pannel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="‹ : الاوامر : ›",
+                text="",
                 url=f"https://t.me/{app.username}?start=help",
             ),
             InlineKeyboardButton(text=_[""], callback_data="settings_helper"),
@@ -30,46 +30,46 @@ def start_pannel(_):
     if SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons.append(
             [
-                InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_CHANNEL}"),
-                InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text="", url=f"{SUPPORT_CHANNEL}"),
+                InlineKeyboardButton(text="", url=f"{SUPPORT_GROUP}"),
             ]
         )
     else:
         if SUPPORT_CHANNEL:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_CHANNEL}")]
+                [InlineKeyboardButton(text="", url=f"{SUPPORT_CHANNEL}")]
             )
         if SUPPORT_GROUP:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_GROUP}")]
+                [InlineKeyboardButton(text="", url=f"{SUPPORT_GROUP}")]
             )
     return buttons
 
 
 def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
-        [InlineKeyboardButton(text="‹ : الاوامر : ›", callback_data="settings_back_helper")]
+        [InlineKeyboardButton(text="", callback_data="settings_back_helper")]
     ]
     if SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons.append(
             [
-                InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_CHANNEL}"),
-                InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text="", url=f"{SUPPORT_CHANNEL}"),
+                InlineKeyboardButton(text="", url=f"{SUPPORT_GROUP}"),
             ]
         )
     else:
         if SUPPORT_CHANNEL:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : سورس فوكس : ›", url=f"{SUPPORT_CHANNEL}")]
+                [InlineKeyboardButton(text="", url=f"{SUPPORT_CHANNEL}")]
             )
         if SUPPORT_GROUP:
             buttons.append(
-                [InlineKeyboardButton(text="‹ : لتنصيب بوت : ›", url=f"{SUPPORT_GROUP}")]
+                [InlineKeyboardButton(text="", url=f"{SUPPORT_GROUP}")]
             )
     buttons.append(
         [
             InlineKeyboardButton(
-                text="‹ : اضف البوت الى مجموعتك : ›",
+                text="",
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ]
@@ -77,7 +77,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     if GITHUB_REPO and OWNER:
         buttons.append(
             [
-                InlineKeyboardButton(text="‹ : المطور : ›", user_id=OWNER),
+                InlineKeyboardButton(text="", user_id=OWNER),
                 InlineKeyboardButton(text=_["S_B_6"], url=f"{GITHUB_REPO}"),
             ]
         )
@@ -92,7 +92,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         if OWNER:
             buttons.append(
                 [
-                    InlineKeyboardButton(text="‹ : المطور : ›", user_id=OWNER),
+                    InlineKeyboardButton(text="", user_id=OWNER),
                 ]
             )
     InlineKeyboardButton(
