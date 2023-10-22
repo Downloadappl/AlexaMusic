@@ -57,7 +57,7 @@ async def iddd(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        name, url=f"[{random_member.user.first_name}](tg://user?id={random_member.user.id})")
+                        name, url=f"(tg://user?id={random_member.user.id})")
                 ],
             ]
         ),
