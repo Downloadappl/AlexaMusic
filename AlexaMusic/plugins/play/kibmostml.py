@@ -126,11 +126,11 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(command(["صور شباب", "افتار شباب"]))
+@app.on_message(command(["نيو", "افتار شباب"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
-    url = f"https://t.me/vgbmm/{rl}"
-    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار صوره لـك",parse_mode="html",
+    url = f"https://t.me/xxx7sss/{rl}"
+    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار نودز لـك",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -201,17 +201,3 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(command(["/no", "🕷", "نيو", "/n"]))
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,50)
-    url = f"https://t.me/xxx7sss/{rl}"
-    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار نودز لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-   )
