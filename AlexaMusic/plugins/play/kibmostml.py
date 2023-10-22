@@ -126,11 +126,11 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(command(["نيو", "افتار شباب"]))
+@app.on_message(command(["ذبح", "افتار شباب"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
-    url = f"https://t.me/nodz0ek/{rl}"
-    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار نيو لـك",parse_mode="html",
+    url = f"https://t.me/abdeihasdi_999/{rl}"
+    await client.send_photo(message.chat.id,url,caption="🐉 ¦ تـم اختيـار الذبح لـك",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
