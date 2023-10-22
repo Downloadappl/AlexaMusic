@@ -13,7 +13,7 @@ from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 )
 async def maker(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"",
+        photo=f"https://telegra.ph/file/d3bed0d2eb1fd5a154369.jpg",
         caption=f"""اهلا بك اوامر سورس فوكس الرسمي
 
 ⌯  غنيلي - اغاني جميله ترند
