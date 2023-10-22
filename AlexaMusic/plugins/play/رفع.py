@@ -6,8 +6,7 @@ from AlexaMusic import app
 import random
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.enums import ParseMode, ChatMemberStatus 
-
+from pyrogram.errors import FloodWait
 lokrf = []
 
 @app.on_message(
