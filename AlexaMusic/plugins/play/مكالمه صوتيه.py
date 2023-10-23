@@ -49,7 +49,7 @@ async def strcall(client, message):
         text += f"\nعددهم : {len(participants)}\n✔️"    
         await message.reply(f"{text}")
 @app.on_message(filters.video_chat_ended)
-async def brah2(client, message):
+async def bottttt(client, message):
     da = message.video_chat_ended.duration
     ma = divmod(da, 60)
     ho = divmod(ma[0], 60)
