@@ -19,7 +19,7 @@ from random import  choice, randint
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/m_alkhaqanil/{rl}"
-    await client.send_voice(message.chat.id,url,caption="**‹ : تم اختيار قصيده حسينية لك : ›**",parse_mode="html",
+    await client.send_voice(message.chat.id,url,caption="**‹ : تم اختيار قصيده حسينية لك .**",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
