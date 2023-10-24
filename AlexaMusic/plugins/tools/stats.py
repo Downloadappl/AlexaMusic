@@ -342,38 +342,22 @@ async def overall_stats(client, CallbackQuery, _):
     total_queries = await get_queries()
     blocked = len(BANNED_USERS)
     sudoers = len(await get_sudoers())
-    text = f"""🌹 **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
+    text = f"""🌹 **- اهلا بك احصائيات بوت التشغيل ااخاص بك:**
+    
+🌹 **ᴍᴏ      <b><u>الاحصائيات العامه</b><u/>
+**الدردشه :** {served_chats} 
+**المستخدمين :** {served_users} 
+**المحظورين :** {blocked} 
+**المطورين :** {sudoers} 
 
-       <b><u>🌹 ʜᴀʀᴅᴡᴀʀᴇ</b><u/>
-🌹 **ᴍᴏᴅᴜʟᴇs:** {mod}
-🌹 **ᴩʟᴀᴛғᴏʀᴍ:** {sc}
-🌹 **ʀᴀᴍ:** {ram}
-🌹 **ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs:** {p_core}
-🌹 **ᴛᴏᴛᴀʟ ᴄᴏʀᴇs:** {t_core}
-🌹 **ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ:** {cpu_freq}
-
-       <b><u>🌹 sᴏғᴛᴡᴀʀᴇ</b><u/>
-🌹 **ᴩʏᴛʜᴏɴ :** {pyver.split()[0]}
-🌹 **ᴩʏʀᴏɢʀᴀᴍ :** {pyrover}
-🌹 **ᴩʏ-ᴛɢᴄᴀʟʟs :** {pytgver}
-
-        <b><u>🌹 sᴛᴏʀᴀɢᴇ</b><u/>
-🌹 **ᴀᴠᴀɪʟᴀʙʟᴇ:** {total[:4]} GiB
-🌹 **ᴜsᴇᴅ:** {used[:4]} GiB
-🌹 **ғʀᴇᴇ:** {free[:4]} GiB
-
-      <b><u>🌹 ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs</b><u/>
-🌹 **ᴄʜᴀᴛs:** {served_chats} 
-🌹 **ᴜsᴇʀs:** {served_users} 
-🌹 **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-🌹 **sᴜᴅᴏᴇʀs:** {sudoers} 
-
-      <b><u>🌹 ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ</b><u/>
-🌹 **sɪᴢᴇ:** {datasize[:6]} ᴍʙ
-🌹 **sᴛᴏʀᴀɢᴇ:** {storage} ᴍʙ
-🌹 **ᴄᴏʟʟᴇᴄᴛɪᴏɴs:** {collections}
-🌹 **ᴋᴇʏs:** {objects}
-🌹 **ʙᴏᴛ ǫᴜᴇʀɪᴇs:** `{total_queries}`
+      <b><u>ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ</b><u/>
+**مدة التشغيل:** {mongouptime[:4]} Days
+**المساحه:** {datasize[:6]} Mb
+**الذاكره:** {storage} Mb
+**المجموعه:** {collections}
+**المفاتيح:** {objects}
+**الاستفسارات:** `{query}`
+**استفسارات البوت:** `{total_queries} `
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
