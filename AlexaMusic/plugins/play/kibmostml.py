@@ -43,7 +43,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -59,7 +59,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -75,7 +75,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -90,7 +90,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -105,7 +105,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -120,7 +120,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -135,7 +135,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -150,7 +150,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -165,7 +165,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -180,7 +180,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
@@ -195,9 +195,8 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/H_M_Dr")
                 ],
             ]
         )
     )
-
