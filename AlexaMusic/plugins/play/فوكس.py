@@ -160,27 +160,6 @@ async def down(client, message):
 
 
 
-@app.on_message(filters.group & command("السورس"))
-async def addbot(client: Client, message: Message):
-    await message.reply_text(f"""**- اهلين فيك بسورس فوكس ياحلو
-• لو تبي تنصب مثل هالبوت تواصل مع مطور السورس
-• عندك استفسار او اقتراح بخصوص البوت تواصل مع مطور البوت**
-""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "تحديثات فوكس 🍻", url=f"https://t.me/H_M_Dr"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
-    )
-
-
 
 REPLY_MESSAGEE = "- هلا فيك في قسم اوامر فوكس"
 
