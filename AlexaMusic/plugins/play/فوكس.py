@@ -17,7 +17,7 @@ from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 @app.on_message(filters.regex("^$"))
 async def khalid(client: Client, message: Message):
     user = message.from_user.mention
-    await message.reply_text(f"""**اهلين {user} !\n- اضغط الزر عشان تشوف اوامر ميرا**""",
+    await message.reply_text(f"""**اهلين {user} !\n- اضغط الزر عشان تشوف اوامر فوكس**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -30,9 +30,9 @@ async def khalid(client: Client, message: Message):
 
 
 
-@app.on_message(filters.regex("^ميرا الاحصائيات$") & filters.user(2089102006))
+@app.on_message(filters.regex("^فوكس الاحصائيات$") & filters.user(5012406813))
 async def ahtek(client: Client, message: Message):
-    m_reply = await message.reply_text(f"**✧ اهلين مطوري ارحب\n- هذي احصائيات ميرا ياعيني :\n\n-› عدد المشتركين : 12478\n-› عدد المجموعات : 11346\n\n• تم زيادة 1204 مشترك ونقص 2103 مجموعة  في اخر 24 ساعة\n\n- عدد الطرد من بوتات اخرى : 843\n- طرد يدوي : 1302\n\n╼╾**")
+    m_reply = await message.reply_text(f"**✧ اهلين مطوري ارحب\n- هذي احصائيات فوكس ياعيني :\n\n-› عدد المشتركين : 12478\n-› عدد المجموعات : 11346\n\n• تم زيادة 1204 مشترك ونقص 2103 مجموعة  في اخر 24 ساعة\n\n- عدد الطرد من بوتات اخرى : 843\n- طرد يدوي : 1302\n\n╼╾**")
     await m_reply_text("")
 
 
@@ -46,7 +46,7 @@ def vgdg(client,message):
                 [
                     [
                         InlineKeyboardButton(
-                            "تحديثات ميرا 🍻", url=f"t.me/NvvvC")
+                            "تحديثات فوكس 🍻", url=f"t.me/H_M_Dr")
                     ]
                 ]
             ),
@@ -82,7 +82,7 @@ async def delet(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command("ميرا نادي المطور", [".", ""]) & filters.group)
+@app.on_message(filters.command("فوكس نادي المطور", [".", "صيح المطور"]) & filters.group)
 async def kstr(client: Client, message: Message):
        chat = message.chat.id
        gti = message.chat.title
@@ -95,11 +95,11 @@ async def kstr(client: Client, message: Message):
        buttons = [[InlineKeyboardButton(gti, url=f"{link}")]]
        reply_markup = InlineKeyboardMarkup(buttons)
        
-       await app.send_message(-1001580518434, f"- قام {message.from_user.mention}\n- بمناداتك عزيزي المطور\n- ايديه {user_id}\n- يوزره @{user_ab}\n- ايدي القروب {message.chat.id}\n- يوزر القروب {chatusername}",
+       await app.send_message(-1002015243380, f"- قام {message.from_user.mention}\n- بمناداتك عزيزي المطور\n- ايديه {user_id}\n- يوزره @{user_ab}\n- ايدي الكروب {message.chat.id}\n- يوزر الكروب {chatusername}",
        reply_markup=reply_markup,
        )
        await message.reply_text(
-        f"""- **ابشر ياعيوني ارسلت للمطور بيخش القروب ويشوف مشكلتك بأقرب وقت\n\n- تابع قناة البوت عشات تشوف التحديثات** -› [• Source Mira •](t.me/NvvvC)""", disable_web_page_preview=True     
+        f"""- **ابشر ياعيوني ارسلت للمطور يدخل الكروب ويشوف مشكلتك بأقرب وقت\n\n- تابع قناة البوت عشات تشوف التحديثات** -› [• Source Fox •](t.me/H_M_Dr)""", disable_web_page_preview=True     
     )
 
 
@@ -112,9 +112,9 @@ REPLY_MESSAGE_BUTTONS = [
 
          [
 
-             ("كيفية استخدام ميرا"),                   
+             (""),                   
 
-             ("اوامر ميرا")
+             ("اوامر فوكس")
 
 
 
@@ -142,7 +142,7 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^ميرا$"))
+@app.on_message(filters.regex("^فوكس$"))
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
@@ -153,24 +153,24 @@ async def cpanel(_, message: Message):
 
 @app.on_message(filters.regex("اخفاء الازرار") & filters.group)
 async def down(client, message):
-          m = await message.reply("**- ابشر تم اخفاء الازرار بنجاح\n- لو تبي تطلعها مرة ثانية اكتب ميرا**", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("**- ابشر تم اخفاء الازرار بنجاح\n- لو تبي تطلعها مرة ثانية اكتب فوكس**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
-@app.on_message(filters.group & command("كيفية استخدام ميرا"))
+@app.on_message(filters.group & command("كيفية استخدام فوكس"))
 async def addbot(client: Client, message: Message):
-    await message.reply_text(f"""- **هلا والله ياعيني عشان تفعل بوت ميرا اتبع الخطوات الي بالاسفل**
+    await message.reply_text(f"""- **هلا والله ياعيني عشان تفعل بوت فوكس اتبع الخطوات الي بالاسفل**
 1 • ارفعه مشرف بكل الصلاحيات 
-2 • لو تبي تشوف الاوامر اكتب [ م الاوامر ] ولو تبي تشغل على طول اكتب ميرا شغلي + اسم المقطع الصوتي
-• مثال : ميرا شغلي واتنسيت
-- لو واجهت مشكله كلم مطور البوت ~ @PsPsP""",
+2 • لو تبي تشوف الاوامر اكتب [ م الاوامر ] ولو تبي تشغل على طول اكتب فوكس شغلي + اسم المقطع الصوتي
+• مثال : فوكس شغلي واتنسيت
+- لو واجهت مشكله كلم مطور البوت ~ @H_M_Dr""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                       "Khaled", user_id=2089102006),
+                       "‹ المطور ›", user_id=5012406813),
                 ],[
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
             ]
         ),
@@ -181,20 +181,18 @@ async def addbot(client: Client, message: Message):
 
 @app.on_message(filters.group & command("السورس"))
 async def addbot(client: Client, message: Message):
-    await message.reply_text(f"""**- اهلين فيك بسورس ميرا ياحلو
+    await message.reply_text(f"""**- اهلين فيك بسورس فوكس ياحلو
 • لو تبي تنصب مثل هالبوت تواصل مع مطور السورس
 • عندك استفسار او اقتراح بخصوص البوت تواصل مع مطور البوت**
-مطور السورس -› [Khaled](t.me/PsPsP)
-قناة السورس -› [𝑺𝒐𝒖𝒓𝒄𝒆 𝑴𝒊𝒓𝒂](t.me/NvvvC)
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "تحديثات ميرا 🍻", url=f"https://t.me/NvvvC"),
+                        "تحديثات فوكس 🍻", url=f"https://t.me/H_M_Dr"),
                 ],[
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
             ]
         ),
@@ -203,11 +201,11 @@ async def addbot(client: Client, message: Message):
 
 
 
-REPLY_MESSAGEE = "- هلا فيك في قسم اوامر ميرا"
+REPLY_MESSAGEE = "- هلا فيك في قسم اوامر فوكس"
 
 REPLY_MESSAGE_BUTTONSS = [
          [
-             ("شرح التشغيل بمنصات الاغاني")
+             ("قائمة المنصات")
           ],
           [
              ("اوامر المجموعة"),
@@ -215,7 +213,7 @@ REPLY_MESSAGE_BUTTONSS = [
           ],
           [
              ("طريقة البحث"),
-             ("طريقة ربط القنوات")
+             ("")
           ],
           [
              ("حفظ التشغيل")             
@@ -229,7 +227,7 @@ REPLY_MESSAGE_BUTTONSS = [
 ]
 
   
-@app.on_message(filters.group & command("اوامر ميرا"))
+@app.on_message(filters.group & command("اوامر فوكس"))
 async def com(_, message: Message):             
         text = REPLY_MESSAGEE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONSS, resize_keyboard=True, selective=True)
@@ -250,7 +248,7 @@ async def bask(_, message: Message):
         )
 
 
-@app.on_message(filters.group & command("شرح التشغيل بمنصات الاغاني"))
+@app.on_message(filters.group & command("قائمة المنصات"))
 async def mnsat(client: Client, message: Message):
     await message.reply_text(f"""** اهلين فيك في قسم تشغيل المنصات
 - المنصات المدعومة هي ↓
@@ -259,15 +257,14 @@ async def mnsat(client: Client, message: Message):
 • SoundCloud
 • AppleMusic
 • Spotify
-- لو واجهت مشكلة تواصل مع مطور السورس @PsPsP**
-- [𝑺𝒐𝒖𝒓𝒄𝒆 𝑴𝒊𝒓𝒂](t.me/NvvvC)
+- لو واجهت مشكلة تواصل مع مطور السورس @IIIlIIv**
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                       
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
 
                 ],
             ]
@@ -277,15 +274,15 @@ async def mnsat(client: Client, message: Message):
 
 @app.on_message(filters.group & command("اوامر المجموعة"))
 async def laksk(client: Client, message: Message):
-    await message.reply_text(f"""\n\n\n╭── • [𝗠𝗶𝗿𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/NvvvC) • ──╮\n\n ✧ **اوامر التشغيل بالمجموعة**\n\n• **ميرا شغلي + اسم الاغنية او بالرد** \n-› لتشغيل الاغاني فالمجموعة\n\n• **ميرا طفيها** او ** ايقاف**\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n• **ميرا الي بعده** او **تخطي**\n-› لتشغيل التالي بالانتظار\n\n • **ميرا اص** او **اسكتي**\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n• **ميرا تكلمي**\n-› لالغاء الكتم واكمال التشغيل\n\n• **ميرا ايقاف مؤقت** او **ايقاف مؤقت**\n -› لايقاف التشغيل بشكل مؤقت\n\n• **ميرا كملي** او **استئناف**\n -› لاكمال التشغيل بعد الايقاف المؤقت\n\n╰── • [𝗠𝗶𝗿𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/NvvvC) • ──╯""",
+    await message.reply_text(f""" ✧ **اوامر التشغيل بالمجموعة**\n\n• **فوكس شغلي + اسم الاغنية او بالرد** \n-› لتشغيل الاغاني فالمجموعة\n\n• ** ايقاف**\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n• **تخطي**\n-› لتشغيل التالي بالانتظار\n\n • **كتم**\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n• **كمل**\n-› لالغاء الكتم واكمال التشغيل\n\n• **ايقاف مؤقت**\n -› لايقاف التشغيل بشكل مؤقت\n\n• **استئناف**\n -› لاكمال التشغيل بعد الايقاف المؤقت""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "", url=f"https://t.me/UUUOLC"),
+                        "", url=f"https://t.me/H_M_Dr"),
                 ],[
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
             ]
         ),
@@ -295,15 +292,15 @@ async def laksk(client: Client, message: Message):
 
 @app.on_message(filters.group & command("اوامر القنوات"))
 async def channvom(client: Client, message: Message):
-    await message.reply_text(f"""\n\n╭── • [𝗠𝗶𝗿𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/NvvvC) • ──╮\n\n ✧ **اوامر التشغيل بالقنوات**\n\n• **ق تشغيل + اسم الاغنية او بالرد** \n-› لتشغيل الاغاني بالقناة\n\n• **ق ايقاف**\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n• **ق تخطي**\n-› لتشغيل التالي بالانتظار\n\n • **ق اص**\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n• **ق كملي**\n-› لالغاء الكتم واكمال التشغيل\n\n• **ق ايقاف مؤقت**\n -› لايقاف التشغيل بشكل مؤقت\n\n• **ق استئناف**\n -› لاكمال التشغيل بعد الايقاف المؤقت\n\n╰── • [𝗠𝗶𝗿𝗮 𝗠𝘂𝘀𝗶𝗰](t.me/NvvvC) • ──╯""",
+    await message.reply_text(f""" ✧ **اوامر التشغيل بالقنوات**\n\n• ** تشغيل + اسم الاغنية او بالرد** \n-› لتشغيل الاغاني بالقناة\n\n• ** ايقاف**\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n• ** تخطي**\n-› لتشغيل التالي بالانتظار\n\n • **كتم**\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n• **كمل**\n-› لالغاء الكتم واكمال التشغيل\n\n• ** ايقاف مؤقت**\n -› لايقاف التشغيل بشكل مؤقت\n\n• **استئناف**\n -› لاكمال التشغيل بعد الايقاف المؤقت""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "", url=f"https://t.me/UUUOLC"),
+                        "", url=f"https://t.me/H_M_Dr"),
                 ],[
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
             ]
         ),
@@ -316,17 +313,17 @@ async def channvom(client: Client, message: Message):
 async def dowmmr(client: Client, message: Message):
     await message.reply_text(f"""اهلين فيك في قسم التحميل ♪
 للبحث عن اغنية او فيديو استخدم الامر التالي ↓
-[ بحث + اسم المطلوب ..]
+[ `تنزيل` + اسم المطلوب ..]
 مثال -› بحث بحبك وحشتني
 - الامر يشتغل بخاص البوت والمجموعة ايضا .""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "", url=f"https://t.me/UUUOLC"),
+                        "", url=f"https://t.me/H_M_Dr"),
                 ],[
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
             ]
         ),
@@ -340,27 +337,10 @@ async def dowhmr(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "", url=f"https://t.me/UUUOLC"),
+                        "", url=f"https://t.me/H_M_Dr"),
                 ],[
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
-    )
-
-@app.on_message(filters.group & command("طريقة ربط القنوات"))
-async def dowhmo(client: Client, message: Message):
-    await message.reply_text("""- هلا والله\n◌**عشان تشغل بالقنوات لازم تسوي بعض الخطوات وهي◌** :\n\n1 -› تدخل البوت قناتك وترفعه مشرف\n2 -› ترجع للقروب وتكتب { **ربط + يوزر القناة** }\n3 -› **اضغط على زر اوامر التشغيل عشان تعرف كيف تشغل**..""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "", url=f"https://t.me/UUUOLC"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
             ]
         ),
