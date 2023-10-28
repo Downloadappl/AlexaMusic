@@ -275,7 +275,7 @@ async def welcome(client, message: Message):
         except:
             return
 
-OwnerM = ReplyKeyboardMarkup([
+OwnerM = InlineKeyboardButton([
 [("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
 [("الغاء")], 
 [("◍ قسم الاحصائيات ◍")],
