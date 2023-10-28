@@ -168,7 +168,8 @@ async def addbot(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                        "‹ المطور ›", user_id=5012406813),
-                ],[
+                ],
+                [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
@@ -191,7 +192,8 @@ async def addbot(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "تحديثات فوكس 🍻", url=f"https://t.me/H_M_Dr"),
-                ],[
+                ],
+                [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
@@ -283,7 +285,8 @@ async def laksk(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "", url=f"https://t.me/H_M_Dr"),
-                ],[
+                ],
+                [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
@@ -302,7 +305,8 @@ async def channvom(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "", url=f"https://t.me/H_M_Dr"),
-                ],[
+                ],
+                [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
@@ -326,7 +330,8 @@ async def dowmmr(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "", url=f"https://t.me/H_M_Dr"),
-                ],[
+                ],
+                [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
@@ -344,7 +349,8 @@ async def dowhmr(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "", url=f"https://t.me/H_M_Dr"),
-                ],[
+                ],
+                [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
