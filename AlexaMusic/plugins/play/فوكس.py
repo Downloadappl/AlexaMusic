@@ -172,8 +172,6 @@ async def addbot(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                ],
-                ]
             
         ),
         disable_web_page_preview=True
@@ -196,8 +194,7 @@ async def addbot(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                ],
-                ]
+    
         ),
         disable_web_page_preview=True
     )
@@ -269,8 +266,6 @@ async def mnsat(client: Client, message: Message):
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
-                ],
-                [
                     
         ),
         disable_web_page_preview=True
@@ -288,8 +283,6 @@ async def laksk(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                ],
-                [
                     
         ),
         disable_web_page_preview=True
@@ -309,8 +302,6 @@ async def channvom(client: Client, message: Message):
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
-                ],
-                [
         ),
         disable_web_page_preview=True
     )
@@ -334,8 +325,6 @@ async def dowmmr(client: Client, message: Message):
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
-                ],
-                [
         ),
         disable_web_page_preview=True
     )
@@ -353,8 +342,6 @@ async def dowhmr(client: Client, message: Message):
                     InlineKeyboardButton(
                         "• ضيفني لقروبك 🎻", url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
 
-                ],
-                [
         ),
         disable_web_page_preview=True
     )
