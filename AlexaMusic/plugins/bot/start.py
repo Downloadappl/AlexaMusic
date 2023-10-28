@@ -1,49 +1,40 @@
 import asyncio
-import time
-import json
-from pyrogram.types import *
-from pyrogram.errors import PeerIdInvalid
-from pyrogram import filters, Client
-from pyrogram.types import (InlineKeyboardButton,
-                            InlineKeyboardMarkup, Message)
-from youtubesearchpython.__future__ import VideosSearch
+
+from pyrogram import filters
+from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from youtubesearchpython.__future__ import VideosSearch
+
 import config
-import requests
-import redis, re
-from pyrogram import *
-from config import (OWNER_ID ,
-		     USER_OWNER,
-	         MUSIC_BOT_NAME,
-	         SUPPORT_CHANNEL,
-	         BOT_TOKEN,
-	         BANNED_USERS)
+from config import BANNED_USERS
+from config.config import OWNER_ID
 from strings import get_command, get_string
 from AlexaMusic import Telegram, YouTube, app
-from AlexaMusic.misc import SUDOERS, _boot_
-from AlexaMusic.plugins.playlist import del_plist_msg
-from AlexaMusic.plugins.sudoers import sudoers_list
-from AlexaMusic.utils.database import (add_served_chat,
-                                       add_served_user,
-                                       get_served_chats,
-                                       get_served_users,
-                                       blacklisted_chats,
-                                       get_assistant, get_lang,
-                                       get_userss, is_on_off,
-                                       is_served_private_chat)
+from AlexaMusic.misc import SUDOERS
+from AlexaMusic.plugins.play.playlist import del_plist_msg
+from AlexaMusic.plugins.sudo.sudoers import sudoers_list
+from AlexaMusic.utils.database import (
+    add_served_chat,
+    is_served_user,
+    add_served_user,
+    blacklisted_chats,
+    get_assistant,
+    get_lang,
+    get_userss,
+    is_on_off,
+    is_served_private_chat,
+)
 from AlexaMusic.utils.decorators.language import LanguageStart
-from AlexaMusic.utils.formatters import get_readable_time
-from AlexaMusic.utils.inline import (help_pannel, private_panel,
-                                     start_pannel)
+from AlexaMusic.utils.inline import help_pannel, private_panel, start_pannel
+from AlexaMusic.utils.command import commandpro
+
 loop = asyncio.get_running_loop()
-token = (BOT_TOKEN)
-bot_id = app.bot_token.split(":")[0]
-r = redis.from_url('redis://')
-owner = (OWNER_ID)
-dev_owner = int(5012406813)
+
+
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
     & filters.private
+    & ~filters.edited
     & ~BANNED_USERS
 )
 @LanguageStart
@@ -52,34 +43,13 @@ async def start_comm(client, message: Message, _):
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
-            dev = (OWNER_ID, 5012406813,5012406813)
-          
-		
             keyboard = help_pannel(_)
-            user = message.from_user.id
-            if int(user) == dev_owner:
-                await message.reply(f"**𖢿 | : مرحبا حبيبي فوكس مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
-					
-            elif message.from_user.id in owner:
-		           
-                   await message.reply(f"**𖢿 | : مرحبا عزيزي المطور الاساسي {message.from_user.mention}\n𖢿 | : اليك ازرار التحكم بالاقسام\n𖢿 | : تستطيع التحكم بجميع الاقسام فقط اضغط على القسم الذي تريده**",reply_markup=main_dev_key)
-                        
- 
-            else:  
-                   await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**",reply_markup=Owneruser)
-                   return await message.reply_photo(
-                       photo=config.START_IMG_URL,
-                       caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
-            )
-
-            
-
+            return await message.reply_text(_["help_1"], reply_markup=keyboard)
         if name[0:4] == "song":
             return await message.reply_text(_["song_2"])
-        
         if name[0:3] == "sta":
             m = await message.reply_text(
-                f"🥱 يتم جلب الاحصائيات الخاصه لـ {config.MUSIC_BOT_NAME} sᴇʀᴠᴇʀ."
+                "🥱 ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ᴩᴇʀsᴏɴᴀʟ sᴛᴀᴛs ғʀᴏᴍ {config.MUSIC_BOT_NAME} sᴇʀᴠᴇʀ."
             )
             stats = await get_userss(message.from_user.id)
             tot = len(stats)
@@ -115,16 +85,14 @@ async def start_comm(client, message: Message, _):
                     details = stats.get(vidid)
                     title = (details["title"][:35]).title()
                     if vidid == "telegram":
-                        msg += f"🔗[قناة السورس](https://t.me/VVHH9) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                        msg += f"🔗[ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ](https://t.me/Shayri_Music_Lovers) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
                     else:
                         msg += f"🔗 [{title}](https://www.youtube.com/watch?v={vidid}) ** played {count} times**\n\n"
                 msg = _["ustats_2"].format(tot, tota, limit) + msg
                 return videoid, msg
 
             try:
-                videoid, msg = await loop.run_in_executor(
-                    None, get_stats
-                )
+                videoid, msg = await loop.run_in_executor(None, get_stats)
             except Exception as e:
                 print(e)
                 return
@@ -139,7 +107,7 @@ async def start_comm(client, message: Message, _):
                 sender_name = message.from_user.first_name
                 return await app.send_message(
                     config.LOG_GROUP_ID,
-                    f"{message.from_user.mention} ضغط ستارت على البوت <code>دخل على قائمة المطورين</code>\n\n**ايديه:** {sender_id}\n**اسمه:** {sender_name}",
+                    f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <code>sᴜᴅᴏʟɪsᴛ</code>\n\n**ᴜsᴇʀ ɪᴅ:** {sender_id}\n**ᴜsᴇʀɴᴀᴍᴇ:** {sender_name}",
                 )
             return
         if name[0:3] == "lyr":
@@ -149,23 +117,11 @@ async def start_comm(client, message: Message, _):
             if lyrics:
                 return await Telegram.send_split_text(message, lyrics)
             else:
-                return await message.reply_text(
-                    "ғᴀɪʟᴇᴅ ᴛᴏ ɢᴇᴛ ʟʏʀɪᴄs."
-                )
+                return await message.reply_text("ғᴀɪʟᴇᴅ ᴛᴏ ɢᴇᴛ ʟʏʀɪᴄs.")
         if name[0:3] == "del":
             await del_plist_msg(client=client, message=message, _=_)
-        if name == "verify":
-            await message.reply_text(f"ʜᴇʏ {message.from_user.first_name},\nشكرا لوثوقك في انا  {config.MUSIC_BOT_NAME}, تم تخزين بياناتك اللازمه يمكنك التشغيل الان")
-            if await is_on_off(config.LOG):
-                sender_id = message.from_user.id
-                sender_name = message.from_user.first_name
-                return await app.send_message(
-                    config.LOG_GROUP_ID,
-                    f"{message.from_user.mention}ضغط ستارت على البوت <code>تحقق من نفسه</code>\n\n**ايديه:** {sender_id}\n**اسمه:** {sender_name}",
-                )
-            return
         if name[0:3] == "inf":
-            m = await message.reply_text("دقيقه يقلبي وحانجيب البيانات")
+            m = await message.reply_text("**🔎 حسنا جاري البحث!**")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -173,33 +129,29 @@ async def start_comm(client, message: Message, _):
                 title = result["title"]
                 duration = result["duration"]
                 views = result["viewCount"]["short"]
-                thumbnail = result["thumbnails"][0]["url"].split("?")[
-                    0
-                ]
+                thumbnail = result["thumbnails"][0]["url"].split("?")[0]
                 channellink = result["channel"]["link"]
                 channel = result["channel"]["name"]
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-😲**جلب المعلومات**😲
-📌 **العنوان:** {title}
+**‹ معلومات الفيديو ⤈**
 
-⏳ **المده:** {duration} دقيقه
-👀 **المشاهدات:** `{views}`
-⏰ **نشرت في:** {published}
-🎥 **القناه:** {channel}
-📎 **رابط القناه:** [عرض القناه]({channellink})
-🔗 **الرابط:** [مشاهده في اليوتيوب]({link})
-💖 بحث بواسطة {config.MUSIC_BOT_NAME}"""
+**اسم الفيديو : ‹** {title} ›
+
+**مده الفيديو : ‹** {duration} ›
+**المشاهدات : ‹** {views} ›
+**وقت النشر : ‹** {published} ›
+**اسم القناة : ‹** {channel} ›
+**رابط القناة :** [ ‹ اضغط هنا ›]({channellink})
+**رابط الفيديو : ** [ ‹ اضغط هنا ›]({link})
+
+‹ تم البحث بواسطة : {config.MUSIC_BOT_NAME} ›"""
             key = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text="• ʏᴏᴜᴛᴜʙᴇ •", url=f"{link}"
-                        ),
-                        InlineKeyboardButton(
-                            text="• قناة السورس •", url="https://t.me/VVHH9"
-                        ),
+                        InlineKeyboardButton(text="‹ مشاهده الفيديو › ", url=f"{link}"),
+                        InlineKeyboardButton(text="‹ اغلاق القائمه ›", callback_data="close"),
                     ],
                 ]
             )
@@ -208,7 +160,7 @@ async def start_comm(client, message: Message, _):
                 message.chat.id,
                 photo=thumbnail,
                 caption=searched_text,
-                parse_mode=ParseMode.MARKDOWN,
+                parse_mode="markdown",
                 reply_markup=key,
             )
             if await is_on_off(config.LOG):
@@ -216,7 +168,7 @@ async def start_comm(client, message: Message, _):
                 sender_name = message.from_user.first_name
                 return await app.send_message(
                     config.LOG_GROUP_ID,
-                    f"{message.from_user.mention}ضغط ستارت على البوت<code>جلب المعلومات</code>\n\n**ايديه:** {sender_id}\n**اسمه:** {sender_name}",
+                    f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <code>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</code>\n\n**ᴜsᴇʀ ɪᴅ:** {sender_id}\n**ᴜsᴇʀɴᴀᴍᴇ:** {sender_name}",
                 )
     else:
         try:
@@ -227,30 +179,14 @@ async def start_comm(client, message: Message, _):
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
             try:
-                owner = (OWNER_ID) 
-                user = message.from_user.id
-                if int(user) == dev_owner: 
-                   return await message.reply(f"**𖢿 | : مرحبا حبيبي كرستال مطور السورس{message.from_user.mention}\n𖢿 | : كل اقسام التحكم بالبوتات\n𖢿 | : تستطيع التحكم بكل البوتات عن طريق هذه الازرار**",reply_markup=OwnerM)
-                if message.from_user.id in owner: 
-                   return await message.reply_text(f"**𖢿 | : مرحبا عزيزي المطور الاساسي {message.from_user.mention}\n𖢿 | : اليك ازرار التحكم بالاقسام\n𖢿 | : تستطيع التحكم بجميع الاقسام فقط اضغط على القسم الذي تريده**",reply_markup=main_dev_key)
-                else:  
-                   await message.reply_text(f"**اهلا عزيزي {message.from_user.mention}\n\n في بوت الميوزك {MUSIC_BOT_NAME} الخاص بي @{USER_OWNER} \n\n هذا بوت تشغيل اغاني وبه الكثير من المميزات الجميله \n\n ارفع البوت مشرف وهايرفعك مالك ويرفع المشرفين تلقائي**",reply_markup=Owneruser)
-                   return await message.reply_photo(
+                await message.reply_photo(
                     photo=config.START_IMG_URL,
-                    caption=_["start_2"].format(
-                        config.MUSIC_BOT_NAME
-                    ),
+                    caption=_["start_2"].format(config.MUSIC_BOT_NAME),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
-    
             except:
                 await message.reply_text(
-                    _["start_2"].format(config.MUSIC_BOT_NAME),
-                    reply_markup=InlineKeyboardMarkup(out),
-                )
-        else:
-            await message.reply_text(
-                _["start_2"].format(config.MUSIC_BOT_NAME),
+_["start_2"].format(config.MUSIC_BOT_NAME),
                 reply_markup=InlineKeyboardMarkup(out),
             )
         if await is_on_off(config.LOG):
@@ -258,24 +194,21 @@ async def start_comm(client, message: Message, _):
             sender_name = message.from_user.first_name
             return await app.send_message(
                 config.LOG_GROUP_ID,
-                f"{message.from_user.mention} ضغط ستارت في البوت.\n\n**ايديه:** {sender_id}\n**اسمه:** {sender_name}",
+                f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ʏᴏᴜʀ ʙᴏᴛ.\n\n**ᴜsᴇʀ ɪᴅ:** {sender_id}\n**ᴜsᴇʀɴᴀᴍᴇ:** {sender_name}",
             )
-        
+
 
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
     & filters.group
+    & ~filters.edited
     & ~BANNED_USERS
 )
 @LanguageStart
 async def testbot(client, message: Message, _):
-    OWNER = OWNER_ID[0]
-    out = start_pannel(_, app.username, OWNER)
-    return await message.reply_photo(
-               photo=config.START_IMG_URL,
-               caption=_["start_1"].format(
-            message.chat.title, config.MUSIC_BOT_NAME
-        ),
+    out = start_pannel(_)
+    return await message.reply_text(
+        _["start_1"].format(message.chat.title, config.MUSIC_BOT_NAME),
         reply_markup=InlineKeyboardMarkup(out),
     )
 
@@ -289,7 +222,7 @@ async def welcome(client, message: Message):
     if config.PRIVATE_BOT_MODE == str(True):
         if not await is_served_private_chat(message.chat.id):
             await message.reply_text(
-                "**بوت ميوزك خاص**\n\فقط الدردشات المصرح بها بواسطة المطور."
+                "**ᴩʀɪᴠᴀᴛᴇ ᴍᴜsɪᴄ ʙᴏᴛ**\n\nᴏɴʟʏ ғᴏʀ ᴛʜᴇ ᴄʜᴀᴛs ᴀᴜᴛʜᴏʀɪsᴇᴅ ʙʏ ᴍʏ ᴏᴡɴᴇʀ, ʀᴇǫᴜᴇsᴛ ɪɴ ᴍʏ ᴏᴡɴᴇʀ's ᴩᴍ ᴛᴏ ᴀᴜᴛʜᴏʀɪsᴇ ʏᴏᴜʀ ᴄʜᴀᴛ ᴀɴᴅ ɪғ ʏᴏᴜ ᴅᴏɴ'ᴛ ᴡᴀɴᴛ ᴛᴏ ᴅᴏ sᴏ ᴛʜᴇɴ ғᴜ*ᴋ ᴏғғ ʙᴇᴄᴀᴜsᴇ ɪ'ᴍ ʟᴇᴀᴠɪɴɢ."
             )
             return await app.leave_chat(message.chat.id)
     else:
@@ -300,7 +233,7 @@ async def welcome(client, message: Message):
             _ = get_string(language)
             if member.id == app.id:
                 chat_type = message.chat.type
-                if chat_type != ChatType.SUPERGROUP:
+                if chat_type != "supergroup":
                     await message.reply_text(_["start_6"])
                     return await app.leave_chat(message.chat.id)
                 if chat_id in await blacklisted_chats():
@@ -311,11 +244,9 @@ async def welcome(client, message: Message):
                     )
                     return await app.leave_chat(chat_id)
                 userbot = await get_assistant(message.chat.id)
-                OWNER = OWNER_ID[0]
-                out = start_pannel(_, app.username, OWNER)
-                await message.reply_photo(
-                    photo=config.START_IMG_URL,
-                    caption=_["start_3"].format(
+                out = start_pannel(_)
+                await message.reply_text(
+                    _["start_3"].format(
                         config.MUSIC_BOT_NAME,
                         userbot.username,
                         userbot.id,
@@ -324,84 +255,12 @@ async def welcome(client, message: Message):
                 )
             if member.id in config.OWNER_ID:
                 return await message.reply_text(
-                    _["start_4"].format(
-                        config.MUSIC_BOT_NAME, member.mention
-                    )
+                    _["start_4"].format(config.MUSIC_BOT_NAME, member.mention)
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    _["start_5"].format(
-                        config.MUSIC_BOT_NAME, member.mention
-                    )
+                    _["start_5"].format(config.MUSIC_BOT_NAME, member.mention)
                 )
             return
         except:
             return
-
-
-OwnerM = ReplyKeyboardMarkup([
-[("رفع مالك"),("تنزيل مالك"),("المالكين"),("حذف المالكين")],
-[("الغاء")], 
-[("◍ قسم الاحصائيات ◍")],
-[("الاحصائيات"),("نسخه الكل")],
-[("عرض المجموعات"),("عدد المجموعات"),("نسخه المجموعات"),("روابط المجموعات")],
-[("عرض الاساسيين"),("عرض الاعضاء"),("عرض المحظورين"),("عرض المطورين")], 
-[("عدد الاساسيين"),("عدد الاعضاء"),("عدد المحظورين"),("عدد المطورين")], 
-[("نسخه الاساسيين"),("نسخه الاعضاء"),("نسخه المحظورين"),("نسخه المطورين")],
-
-[("-")], 
-
-[("◍ قسم الاذاعه ◍")],
-[("توجيه للكل"),("-"),("اذاعه للكل")],
-[("-"),("-"),("-")],
-[("اذاعه الاعضاء"),("اذاعه المجموعات"),("اذاعه المحظورين")],
-[("توجيه الاعضاء"),("توجيه المجموعات"),("توجيه محظورين")],
-[("الغاء")], 
-
-
-[("◍ قسم الاساسيين"),("◍ قسم المطورين"),("◍ قسم الحظر ◍")],
-[("رفع مطور اساسي"),("رفع مطور"),("حظر عضو")],
-[("تنزيل مطور اساسي"),("تنزيل مطور"),("الغاء حظر عضو")],
-[("عرض المطورين الاساسيين"),("عرض المطورين"),("عرض المحظورين")],
-[("حذف الاساسيين"),("حذف المطورين"),("حذف المحظورين")],
-[("الغاء")],
-
-[("◍ قسم الاشتراك ◍"),("◍ قسم معرف المطور ◍"),("◍ قسم المطور ◍")],
-[("عرض قناة الاشتراك"),("عرض معرف المطور"),("عرض قناة المطور")],
-[("اضف قناة اشتراك اجباري"),("اضافه معرف المطور"),("اضافه قناه المطور")],
-[("حذف قناه الاشتراك"),("حذف معرف المطور"),("حذف قناه المطور")],
-[("الغاء")], 
-[("•---- حذف الكيبورد -----•")]
-], resize_keyboard=True)
-main_dev_key = ReplyKeyboardMarkup([
-[("•---- حذف الكيبورد -----•")],
-[("◍ قسم الاحصائيات ◍")],
-[("الاحصائيات")],
-[("عرض المجموعات"),("عدد المجموعات"),("نسخه المجموعات"),("نسخه للكل")],
-[("عرض الاساسيين"),("عرض الاعضاء"),("عرض المحظورين"),("عرض المطورين")], 
-[("الغاء")], 
-
-[("◍ قسم الاذاعه ◍")],
-[("توجيه للكل"),("-"),("اذاعه للكل")],
-[("اذاعه الاعضاء"),("اذاعه المجموعات"),("اذاعه المحظورين")],
-[("توجيه الاعضاء"),("توجيه المجموعات"),("توجيه محظورين")],
-[("الغاء")], 
-[("◍ قسم الاشتراك ◍")],
-[("عرض قناة الاشتراك")],
-[("اضف قناة اشتراك اجباري")],
-[("حذف قناه الاشتراك")],
-[("الغاء")],
-[("◍ قسم المطور ◍")],
-[("عرض قناة المطور")],
-[("اضافه قناه المطور")],
-[("حذف قناه المطور")],
-[("الغاء")], 
-[("•---- حذف الكيبورد -----•")]
-], resize_keyboard=True)
-
-Owneruser = ReplyKeyboardMarkup([
-[("الاوامر"),("السورس")],[("المطور"),("مبرمج السورس"),("/مساعده")],
-[("غنيلي"),("كت"),("صور")],
-[("اذكار"),("مميزات"),("ذكاء اصتناعي")],
-[("•---- حذف الكيبورد -----•")]
-], resize_keyboard=True)
