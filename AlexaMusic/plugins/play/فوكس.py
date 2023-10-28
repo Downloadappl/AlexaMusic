@@ -49,7 +49,7 @@ def vgdg(client,message):
                     [
                         InlineKeyboardButton(
                             "تحديثات فوكس 🍻", url=f"t.me/H_M_Dr")
-                    ]
+                    ],
                    [
                     
             ),
