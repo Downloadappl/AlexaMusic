@@ -49,8 +49,8 @@ def vgdg(client,message):
                     [
                         InlineKeyboardButton(
                             "تحديثات فوكس 🍻", url=f"t.me/H_M_Dr")
-                    ],
-                   [
+                ],
+                [
                     
             ),
             disable_web_page_preview=True
@@ -70,7 +70,8 @@ async def delet(client: Client, message: Message):
                         "• Telegram •", url=f"https://my.telegram.org/auth?to=delete"),
                     InlineKeyboardButton(
                         "• Instagram •", url=f"https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"),
-                ],[
+                ],
+                [
                     InlineKeyboardButton(
                         "• Snapchat •", url=f"https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount"),
                     InlineKeyboardButton(
