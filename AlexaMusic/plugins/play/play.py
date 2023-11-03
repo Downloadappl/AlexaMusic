@@ -26,28 +26,29 @@ from AlexaMusic.utils.inline.play import (livestream_markup,
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
 from AlexaMusic.utils.logger import play_logs
 from AlexaMusic.utils.stream.stream import stream
-
-
-force_btn = InlineKeyboardMarkup(
-    [
-        [
-                                    
-        ],        
-    ]
-)
-
-async def check_is_joined(message):    
-    try:
-        userid = message.from_user.id
-        status = await app.get_chat_member("H_M_Dr", userid)
-        return True
-    except Exception:
-        await message.reply_text("*انت لست مشترك في قناة البوت @H_M_Dr ** \n**انضم لتستطيع تشغيل الاغاني**",reply_markup=force_btn,parse_mode="markdown",disable_web_page_preview=False)
-        return False
-
 # Command
 PLAY_COMMAND = get_command("PLAY_COMMAND")
 
+
+
+async def joinch(message):
+        ch = "SOURCEVEGA"
+        us = message.from_user.id
+        try:
+            await app.vega.resolve_peer(ch)
+            await app.vega.resolve_peer(us)
+            await app.vega.get_chat_member(ch, us)
+        except:
+                await message.reply_text(f"يجب ان تشترك في القناة : @{ch} ", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton("‹ اضغط هنا ›", url=f"https://t.me/{ch}"),
+                            ],
+                         ] 
+                      ) 
+                   )
+                return True
+          
 
 @app.on_message(
     command(PLAY_COMMAND)
