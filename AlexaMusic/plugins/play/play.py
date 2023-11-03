@@ -26,28 +26,9 @@ from AlexaMusic.utils.inline.play import (livestream_markup,
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
 from AlexaMusic.utils.logger import play_logs
 from AlexaMusic.utils.stream.stream import stream
+
 # Command
 PLAY_COMMAND = get_command("PLAY_COMMAND")
-
-
-
-async def joinch(message):
-        ch = "SOURCEVEGA"
-        us = message.from_user.id
-        try:
-            await app.vega.resolve_peer(ch)
-            await app.vega.resolve_peer(us)
-            await app.vega.get_chat_member(ch, us)
-        except:
-                await message.reply_text(f"يجب ان تشترك في القناة : @{ch} ", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("‹ اضغط هنا ›", url=f"https://t.me/{ch}"),
-                            ],
-                         ] 
-                      ) 
-                   )
-                return True
           
 
 @app.on_message(
