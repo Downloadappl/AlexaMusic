@@ -135,7 +135,7 @@ async def khalid(client: Client, message: Message):
 
                     InlineKeyboardButton(
 
-                        name, user_id=from_user.id)
+                        name, user_id=5012406813)
 
                 ],
 
