@@ -123,7 +123,7 @@ async def khalid(client: Client, message: Message):
                     
 **↯ : معرفك -› @{message.from_user.username}**
                     
-**↯ : احصائيات -› Developer Fox**
+**↯ : اايديك -› `{message.from_user.id}`**
                     
 **↯ : االنبذه -› \n {bio}**""", 
 
