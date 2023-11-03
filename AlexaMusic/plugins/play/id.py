@@ -117,7 +117,7 @@ async def khalid(client: Client, message: Message):
 
     async for photo in client.iter_profile_photos(message.from_user.id, limit=1):
 
-                    await message.reply_photo(photo.file_id,       caption=f"""• In the end, you are the bad, and they are the innocent\n\n• 𝑵𝒂𝒎𝒆 -› {message.from_user.mention}\n• 𝑼𝒔𝒆𝒓 -› @{message.from_user.username}\n• 𝑺𝒕𝒂𝒕𝒔 -› Developer Mira\n• 𝑩𝒊𝒐 -› {bio}""", 
+                    await message.reply_photo(photo.file_id,       caption=f"""**↯ : In the end, you are the bad, and they are the innocent**\n\n**↯ : اسمك -› {message.from_user.mention}**\n**↯ : معرفك -› @{message.from_user.username}**\n**↯ : احصائيات -› Developer Fox**\n**↯ : االنبذه -› {bio}**""", 
 
         reply_markup=InlineKeyboardMarkup(
 
