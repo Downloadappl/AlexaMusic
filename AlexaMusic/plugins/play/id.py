@@ -119,13 +119,13 @@ async def khalid(client: Client, message: Message):
 
                     await message.reply_photo(photo.file_id,       caption=f"""**↯ : وفي النهاية أنتم السيئون وهم الأبرياء**
             
-**↯ : اسمك -› {message.from_user.mention}**
+**↯ : اسمك : › {message.from_user.mention}**
                     
-**↯ : معرفك -› @{message.from_user.username}**
+**↯ : معرفك : › @{message.from_user.username}**
                     
-**↯ : اايديك -› `{message.from_user.id}`**
+**↯ : ايديك : › `{message.from_user.id}`**
                     
-**↯ : االنبذه -› \n {bio}**""", 
+**↯ : النبذه : › \n {bio}**""", 
 
         reply_markup=InlineKeyboardMarkup(
 
