@@ -1,7 +1,6 @@
 import asyncio
 import pyrogram
 from pyrogram import Client, filters
-from AlexaMusic import settingsApp
 from strings import get_command
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
