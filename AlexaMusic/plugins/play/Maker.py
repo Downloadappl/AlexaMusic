@@ -7,7 +7,7 @@ from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 
 
 @app.on_message(
-    command(["اوامر البوت","الاوامر",""])
+    command(["",""])
     & filters.group
     & ~filters.edited
 )
