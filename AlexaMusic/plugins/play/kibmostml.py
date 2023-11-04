@@ -21,7 +21,7 @@ from random import  choice, randint
 @app.on_message(command(["غنيلي", "", "غ", ""]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
-    url = f"https://t.me/SaidlMusic/{rl}"
+    url = f"https://t.me/proxMusicl/{rl}"
     await client.send_voice(message.chat.id,url,caption="🐉 ¦ تـم اختيـار الاغـنـية لـك",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
