@@ -165,7 +165,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
         )
     )
 
-  @app.on_callback_query(filters.regex("hmd"))
+@app.on_callback_query(filters.regex("hmd"))
 async def cr_usage(_, callback_query: CallbackQuery):
     await callback_query.answer()
     await callback_query.message.edit_text(
