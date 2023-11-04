@@ -1,6 +1,5 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from telegraph import upload_file
 import os
 from strings.filters import command
 from AlexaMusic import app
