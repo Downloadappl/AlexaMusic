@@ -324,7 +324,7 @@ def queue_markup(_, videoid, chat_id):
             ],
         [
             InlineKeyboardButton(text="⏯ تخطي ⤈", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="⏹ انهاء • ", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="⏹ ايقاف •", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
         [
             InlineKeyboardButton(
