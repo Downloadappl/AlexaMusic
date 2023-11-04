@@ -226,15 +226,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
         ],
         [
             InlineKeyboardButton(
-                text="◁",
-                callback_data=f"slider B|{query_type}|{query}|{user_id}|{channel}|{fplay}",
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data=f"forceclose {query}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="▷",
+                text="❯",
                 callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
         ],
@@ -249,87 +241,112 @@ def panel_markup_1(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="",
+                text="‹ توقف ›", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‹ استئناف ›",
                 callback_data=f"ADMIN Resume|{chat_id}",
             ),
-            InlineKeyboardButton(text="⏸ ايقاف مؤقت ⤈", callback_data=f"ADMIN Pause|{chat_id}"),
-            ],
-            [
-            InlineKeyboardButton(text="⏯ تخطي ⤈", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="⏹ انهاء • ايقاف ⤈", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
         [
             InlineKeyboardButton(
-                text="‹ قوائم التشغيل ›",
-                callback_data=f"add_playlist {videoid}",
+                text="‹ تخطي ›", callback_data=f"ADMIN Skip|{chat_id}"
             ),
             InlineKeyboardButton(
-                text="",
-                url=f"{SUPPORT_GROUP}",
+                text="‹ انهاء ›", callback_data=f"ADMIN Stop|{chat_id}"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="",
-                callback_data=f"ADMIN Shuffle|{chat_id}",
+                text="‹ ◀️ ›",
+                callback_data=f"Pages Back|0|{videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(
-                text="", callback_data=f"ADMIN Loop|{chat_id}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="⏮ 𝟏𝟎 ثواني ⤈",
-                callback_data=f"ADMIN 1|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="⏭ 𝟏𝟎 ثواني ⤈",
-                callback_data=f"ADMIN 2|{chat_id}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="⏮ 𝟑𝟎 ثواني ⤈",
-                callback_data=f"ADMIN 3|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="⏭ 𝟑𝟎 ثواني ⤈",
-                callback_data=f"ADMIN 4|{chat_id}",
-            ),
-        ],
-        [
             InlineKeyboardButton(
                 text="‹ رجوع ›",
                 callback_data=f"MainMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ ▶️ ›",
+                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
             ),
         ],
     ]
     return buttons
 
 
-## Queue Markup Anon
-
-
-def queue_markup(_, videoid, chat_id):
+def panel_markup_2(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="▶️ استئناف ⤈",
-                callback_data=f"ADMIN Resume|{chat_id}",
+                text="‹ كتم ›", callback_data=f"ADMIN Mute|{chat_id}"
             ),
-            InlineKeyboardButton(text="⏸ ايقاف مؤقت ⤈", callback_data=f"ADMIN Pause|{chat_id}"),
-            ],
-            [
-            InlineKeyboardButton(text="‹ اضافه الى المفضله ›", callback_data=f"add_playlist {videoid}"),
-            ],
-        [
-            InlineKeyboardButton(text="⏯ تخطي ⤈", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="⏹ ايقاف •", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(
+                text="‹ الغاء كتم ›",
+                callback_data=f"ADMIN Unmute|{chat_id}",
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="‹ اغلاق ›", callback_data=f"ADMIN CloseA|{chat_id}"
-            )
+                text="‹ خلط ›",
+                callback_data=f"ADMIN Shuffle|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ تكرار ›", callback_data=f"ADMIN Loop|{chat_id}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="‹ ◀️ ›",
+                callback_data=f"Pages Back|1|{videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ رجوع ›",
+                callback_data=f"MainMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ ▶️ ›",
+                callback_data=f"Pages Forw|1|{videoid}|{chat_id}",
+            ),
+        ],
+    ]
+    return buttons
+
+
+def panel_markup_3(_, videoid, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="‹ ارجاع 10ث ›",
+                callback_data=f"ADMIN 1|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ تقديم 10ث ›",
+                callback_data=f"ADMIN 2|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="‹ ارجاع 30ث ›",
+                callback_data=f"ADMIN 3|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ تقديم 30ث ›",
+                callback_data=f"ADMIN 4|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="‹ ◀️ ›",
+                callback_data=f"Pages Back|2|{videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ رجوع ›",
+                callback_data=f"MainMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‹ ▶️ ›",
+                callback_data=f"Pages Forw|2|{videoid}|{chat_id}",
+            ),
         ],
     ]
     return buttons
