@@ -22,8 +22,8 @@ async def cr_source(client: Client, message: Message):
     await message.reply_photo(
       photo=f"https://telegra.ph/file/ee19a89af1558c58822a3.jpg",
         caption=f"""**- قائمة الاوامر
+        
  — — — — — — — — — — 
- 
 - م1 ( اوامر التشغيل )
 - م2 ( اوامر التفعيل )
 - م3 ( اوامر الالعاب )
@@ -37,10 +37,10 @@ async def cr_source(client: Client, message: Message):
                         "‹ 2م ›", callback_data="ch"),  
                  ],[
                     InlineKeyboardButton(
-                        "3م", callback_data="adm"), 
+                        "‹ م3 ›", callback_data="adm"), 
                 
                 InlineKeyboardButton(
-                        "4م", callback_data="hmd"), 
+                        "‹ م4 ›", callback_data="hmd"), 
                  ],[       
                        
                     InlineKeyboardButton(
@@ -82,7 +82,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                     
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="back"), 
+                        "‹ الرئيسية ›", callback_data="الاوامر"), 
                     
                 ]
             ]
@@ -122,7 +122,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                         "‹ رجوع ›", callback_data="gr"), 
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="back"), 
+                        "‹ الرئيسية ›", callback_data="الاوامر"), 
                     
                 ]
             ]
@@ -158,7 +158,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                         "‹ رجوع ›", callback_data="ch"), 
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="back"), 
+                        "‹ الرئيسية ›", callback_data="الاوامر"), 
                     
                 ]
             ]
@@ -195,7 +195,7 @@ async def cr_usage(_, callback_query: CallbackQuery):
                         "‹ رجوع ›", callback_data="adm"), 
                 ],[
                     InlineKeyboardButton(
-                        "‹ الرئيسية ›", callback_data="back"), 
+                        "‹ الرئيسية ›", callback_data="الاوامر"), 
                     
                 ]
             ]
