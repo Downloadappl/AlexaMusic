@@ -28,6 +28,8 @@ def help_pannel(_, START: Union[bool, int] = None):
                     text="‹ اوامر  التشغيل ›",
                     callback_data="help_callback hb2",
                 ),
+            ],
+            [
                 InlineKeyboardButton(
                     text="‹ اوامر  المشرفين ›",
                     callback_data="help_callback hb1",
@@ -35,12 +37,12 @@ def help_pannel(_, START: Union[bool, int] = None):
             ],
             [
                 InlineKeyboardButton(
-                    text="‹ اوامر  البوت ›",
+                    text="",
                     callback_data="help_callback hb3",
                 ),
                 InlineKeyboardButton(
-                    text="‹ اوامر اضافية ›",
-                    callback_data="help_callback hb4",
+                    text="‹ الاوامر العربية ›",
+                    callback_data="help_callback hb7",
                 ),
             ],
             [
@@ -51,8 +53,8 @@ def help_pannel(_, START: Union[bool, int] = None):
             ],
             [
                 InlineKeyboardButton(
-                    text="",
-                    callback_data="help_callback hb8",
+                    text="‹ اوامر اضافية ›",
+                    callback_data="help_callback hb4",
                 ),
                 InlineKeyboardButton(
                     text="‹ اوامر مطوري ›",
