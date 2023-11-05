@@ -1,7 +1,6 @@
 from pyrogram import filters, Client
 from AlexaMusic import app
 import asyncio
-from pyrogram.types import VideoChatEnded, Message
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from AlexaMusic.core.call import Anon
