@@ -26,21 +26,24 @@ async def cr_source(client: Client, message: Message):
  — — — — — — — — — — 
 - م1 ( اوامر التشغيل )
 - م2 ( اوامر التفعيل )
-- م3 ( اوامر الالعاب )
-- م4 ( اوامر التسليه )""",
+- م3 ( اوامر القفل - الفتح )
+- م4 ( اوامر الالعاب )
+- م5 ( اوامر التسليه )""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "‹ 1م ›", callback_data="gr"),
+                        "‹ ااوامر التشغيل ›", callback_data="gr"),
                     InlineKeyboardButton(
-                        "‹ 2م ›", callback_data="ch"),  
+                        "‹ اوامر التفعيل ›", callback_data="ch"),  
                  ],[
                     InlineKeyboardButton(
-                        "‹ م3 ›", callback_data="adm"), 
-                
+                        "‹ فتح - قفل ›", callback_data="yyy"), 
+                 ],[
+                    InlineKeyboardButton(
+                        "‹ اوامر الالعاب ›", callback_data="adm"), 
                 InlineKeyboardButton(
-                        "‹ م4 ›", callback_data="hmd"), 
+                        "‹ اوامر التسليه ›", callback_data="hmd"), 
                  ],[       
                        
                     InlineKeyboardButton(
