@@ -11,7 +11,7 @@ from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJ
 async def strcall(client, message):
     assistant = await group_assistant(Alexa,message.chat.id)
     try:
-        await assistant.join_group_call(message.chat.id, AudioPiped("./AlexaMusic/assets/call.mp3"), stream_type=StreamType().pulse_stream)
+        await assistant.join_group_call(message.chat.id, AudioPiped("./Alexa/assets/call.mp3"), stream_type=StreamType().pulse_stream)
         text="الناس الكاعده تسولف :\n\n"
         participants = await assistant.get_participants(message.chat.id)
         k =0
