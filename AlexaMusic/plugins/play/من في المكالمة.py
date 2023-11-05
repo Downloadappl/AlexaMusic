@@ -9,7 +9,7 @@ from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJ
 
 @app.on_message(filters.regex("^من في المكالمه$"))
 async def strcall(client, message):
-    assistant = await group_assistant(Anon,message.chat.id)
+    assistant = await group_assistant(Alexa,message.chat.id)
     try:
         await assistant.join_group_call(message.chat.id, AudioPiped("./AlexaMusic/assets/call.mp3"), stream_type=StreamType().pulse_stream)
         text="الناس الكاعده تسولف :\n\n"
