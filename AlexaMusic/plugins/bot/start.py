@@ -186,9 +186,9 @@ async def start_comm(client, message: Message, _):
                 )
             except:
                 await message.reply_text(
-_["start_2"].format(config.MUSIC_BOT_NAME),
+                _["start_2"].format(config.MUSIC_BOT_NAME),
                 reply_markup=InlineKeyboardMarkup(out),
-            )
+                )
         if await is_on_off(config.LOG):
             sender_id = message.from_user.id
             sender_name = message.from_user.first_name
