@@ -69,7 +69,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons.append(
         [
             InlineKeyboardButton(
-                text="",
+                text="‹ اضفني لمجموعتك ›",
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ]
@@ -92,7 +92,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         if OWNER:
             buttons.append(
                 [
-                    InlineKeyboardButton(text="", user_id=OWNER),
+                    InlineKeyboardButton(text="‹ المطور ›", user_id=OWNER),
                 ]
             )
     InlineKeyboardButton(
