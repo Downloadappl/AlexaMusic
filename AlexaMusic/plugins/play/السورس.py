@@ -20,8 +20,8 @@ from random import  choice, randint
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/dec37b1ceff618f25a39a.jpg",
-        caption=f"""**[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ . .
- sᴏᴜʀᴄᴇ ғᴏх.](https://t.me/H_M_Dr)**""",
+        caption=f"""**ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ . .
+ [sᴏᴜʀᴄᴇ ғᴏх.](https://t.me/H_M_Dr)**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -30,7 +30,7 @@ async def huhh(client: Client, message: Message):
                     
                 
                     InlineKeyboardButton(
-                        "‹ لتنصيب بوت ›", url=f"tg://user?id=5012406813"),
+                        "‹ لتنصيب بوت ›", url=f"https://t.me/H_M_Dr/45"),
                 ],[
                     
                 
