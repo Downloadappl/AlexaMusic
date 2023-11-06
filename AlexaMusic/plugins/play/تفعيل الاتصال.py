@@ -12,7 +12,7 @@ from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant, ChatAdmi
 from AlexaMusic import app , Userbot
 
 async def get_group_call(
-    client: Client, message: Message, err_msg: str = ""
+    client: Client, message: Message, err_msg: str = "مرحبا"
 ) -> Optional[InputGroupCall]:
     assistant = await get_assistant(message.chat.id)
     chat_peer = await assistant.resolve_peer(message.chat.id)
