@@ -1,7 +1,6 @@
 import asyncio
 from typing import Optional
 from random import randint
-from pyrogram.types import Message, ChatPrivileges
 from pyrogram import Client, filters
 from strings.filters import command
 from pyrogram.raw.functions.channels import GetFullChannel
