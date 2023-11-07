@@ -30,7 +30,7 @@ def setting_markup(_):
         ],
         [
             InlineKeyboardButton(
-                text="‹ السورس ›",
+                text="",
                 url="https://t.me/ZZZ7iZ",
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
