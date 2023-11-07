@@ -55,7 +55,7 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Starting Assistant Clients")
+        LOGGER(__name__).info(f"بدء تشغيل العملاء المساعدين")
         if config.STRING1:
             await self.one.start()
             try:
@@ -66,11 +66,11 @@ class Userbot(Client):
             try:
                 await self.one.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"فشل حساب المساعد 1 في الوصول إلى مجموعة السجل. تأكد من إضافة مساعدك إلى مجموعة السجل الخاصة بك وترقيتك كمسؤول!"
                 )
                 sys.exit()
             get_me = await self.one.get_me()
@@ -92,7 +92,7 @@ class Userbot(Client):
             try:
                 await self.two.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
                 )
             except:
                 LOGGER(__name__).error(
@@ -107,7 +107,7 @@ class Userbot(Client):
                 self.two.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.two.name = get_me.first_name
-            LOGGER(__name__).info(f"Assistant Two Started as {self.two.name}")
+            LOGGER(__name__).info(f"بدأ المساعد الثاني كـ {self.two.name}")
         if config.STRING3:
             await self.three.start()
             try:
@@ -118,7 +118,7 @@ class Userbot(Client):
             try:
                 await self.three.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
                 )
             except:
                 LOGGER(__name__).error(
@@ -144,7 +144,7 @@ class Userbot(Client):
             try:
                 await self.four.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
                 )
             except:
                 LOGGER(__name__).error(
@@ -170,7 +170,7 @@ class Userbot(Client):
             try:
                 await self.five.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
                 )
             except:
                 LOGGER(__name__).error(
