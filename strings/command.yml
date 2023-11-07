@@ -16,7 +16,7 @@ LANGUAGE_COMMAND : ["lang", "language", "langs", "لغه", "اللغه"]
 
 # Play Commands
 PLAY_COMMAND : ["play", "vplay", "cplay", "/cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce", "تشغيل" , "فيديو", "#تشغيل", "/play", "/vplay", "cplay", "cvplay", "/تشغيل", "/ق تشغيل", "/ق شغل", "/فيديو", "تشغيل/", "{NAME_BOT}", "فيديو", "#فديو", "فديو","سورة","سوره"]
-PLAY_COMMAND_chh : ["اغاني", "ق" , "شغل", "مانو", "قناه","/", ".","فيديو"]
+PLAY_COMMAND_chh : ["اغاني", "ق" , "شغل", "بلاك", "قناه","/", ".","فيديو"]
 STOP_COMMAND_chh : ["ايقاف"]
 PLAYMODE_COMMAND : ["playmode", "/وضع شغل", "وضع شغل", "/playmode"]
 CHANNELPLAY_COMMAND : ["channelplay"]
@@ -29,7 +29,7 @@ DELETEPLAYLIST_COMMAND : ["deleteplaylist", "حذف القائمه"]
 
 # Tools
 QUEUE_COMMAND : ["queue","cqueue", "player", "cplayer", "playing", "cplaying"]
-SONG_COMMAND : ["song", "تنزيل", "يوتيوب"]
+SONG_COMMAND : ["song", "تحميل", "يوت"]
 LYRICS_COMMAND : ["lyrics", "كلمات"]
 TAG_COMMAND : ["@all"]
 TAG_COMMAND_STOP : ["all stop"]
@@ -48,7 +48,7 @@ SKIP_COMMAND : ["skip", "cskip", "تخطي", "#تخطي", "/skip", "/cskip", "/�
 SHUFFLE_COMMAND : ["shuffle", "cshuffle"]
 LOOP_COMMAND : ["loop", "cloop"]
 SEEK_COMMAND : ["seek", "cseek", "seekback", "cseekback"]
-RESTART_COMMAND : ["restart", "ريستارت", "ريلود"]
+RESTART_COMMAND : ["restart", "ريستارت", "ريست"]
 
 # Sudo Users Commaands
 
