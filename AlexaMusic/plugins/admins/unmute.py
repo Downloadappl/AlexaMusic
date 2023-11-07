@@ -11,7 +11,7 @@
 
 from pyrogram import filters
 from pyrogram.types import Message
-
+from strings.filters import command
 from config import BANNED_USERS
 from strings import get_command
 from AlexaMusic import app
@@ -24,7 +24,7 @@ UNMUTE_COMMAND = get_command("UNMUTE_COMMAND")
 
 
 @app.on_message(
-    filters.command(UNMUTE_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    command(["كمل"]) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def unmute_admin(Client, message: Message, _, chat_id):
