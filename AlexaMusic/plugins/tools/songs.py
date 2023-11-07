@@ -12,6 +12,7 @@ from yt_dlp import YoutubeDL
 import yt_dlp
 from pykeyboard import InlineKeyboard
 from pyrogram import filters
+from strings.filters import command
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -33,7 +34,7 @@ SONG_COMMAND = get_command("SONG_COMMAND")
 
 
 @app.on_message(
-    filters.command(SONG_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    command(SONG_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @language
 async def song_commad_group(client, message: Message, _):
