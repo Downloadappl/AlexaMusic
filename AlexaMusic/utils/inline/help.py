@@ -10,12 +10,14 @@
 from typing import Union
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
 from AlexaMusic import app
+
 
 def help_pannel(_, START: Union[bool, int] = None):
     first = [
         InlineKeyboardButton(
-            text="‹ اغلاق ›", callback_data=f"close"
+            text=_["CLOSEMENU_BUTTON"], callback_data=f"close"
         )
     ]
     second = [
@@ -31,12 +33,6 @@ def help_pannel(_, START: Union[bool, int] = None):
     upl = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(
-                    text= "‹ الاوامر العربية ›",
-                    callback_data="help_callback hb8",
-                ),
-            ],
-            [   
                 InlineKeyboardButton(
                     text=_["H_B_1"],
                     callback_data="help_callback hb1",
@@ -58,18 +54,8 @@ def help_pannel(_, START: Union[bool, int] = None):
             ],
             [
                 InlineKeyboardButton(
-                    text=_["S_B_5"],
-                    url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                ),
-            ],
-            [   
-                InlineKeyboardButton(
-                    text= "‹ ميزات السورس ›",
-                    callback_data="help_callback hb6",
-                ),
-                InlineKeyboardButton(
-                    text=_["H_B_5"],
-                    callback_data="help_callback hb5",            
+                    text=_["H_B_6"],
+                    callback_data="help_callback hb5",
                 ),
             ],
             mark,
