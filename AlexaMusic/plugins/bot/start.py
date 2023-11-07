@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
-from strings.filters import command
+
 import config
 from config import BANNED_USERS
 from config.config import OWNER_ID
@@ -32,7 +32,7 @@ loop = asyncio.get_running_loop()
 
 
 @app.on_message(
-    command(get_command("START_COMMAND"))
+    filters.command(get_command("START_COMMAND"))
     & filters.private
     & ~filters.edited
     & ~BANNED_USERS
