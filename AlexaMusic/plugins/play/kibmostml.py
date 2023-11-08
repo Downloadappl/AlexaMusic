@@ -22,7 +22,7 @@ from random import  choice, randint
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/proxMusicl/{rl}"
-    await client.send_voice(message.chat.id,url,caption="↯ : تم اختيار اغنيه عشوائيه اليك",parse_mode="html",
+    await client.send_voice(message.chat.id,url,caption="↯ : تم اهداء اغنية لـ {random_member_mention}",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
