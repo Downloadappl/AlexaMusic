@@ -30,7 +30,14 @@ async def gak_owne(client: Client, message: Message):
                  m = await client.get_chat(id)
                  if m.photo:
                        photo = await app.download_media(m.photo.big_file_id)
-                       return await message.reply_photo(photo, caption=f"🕷 ¦𝙽𝙰𝙼𝙴 :{m.first_name}\n🐉 ¦𝚄𝚂𝙴𝚁 :@{m.username}\n🐰 ¦𝙸𝙳 :`{m.id}`\n🎬 ¦𝙱𝙸𝙾 :{m.bio}\n💎 ¦𝙲𝙷𝙰𝚃: {message.chat.title}\n🗿 ¦𝙸𝙳.𝙲𝙷𝙰𝚃 :`{message.chat.id}`",reply_markup=key)
+                       return await message.reply_photo(photo, caption=f"""**- 𝒈𝒓𝒐𝒖𝒑 𝒐𝒘𝒏𝒆𝒓 𝒊𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏 : 
+
+⌁︙ 𝒏𝒂𝒎𝒆 : {m.first_name}
+                       
+⌁︙ 𝒖𝒔𝒆𝒓 : @{m.username}
+
+⌁︙ 𝒃𝒊𝒐 :
+{m.bio}""",reply_markup=key)
                  else:
                     return await message.reply("• " + member.user.mention)
                     
