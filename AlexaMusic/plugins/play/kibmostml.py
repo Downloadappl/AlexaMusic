@@ -26,8 +26,7 @@ async def ihd(client: Client, message: Message):
     reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"")
+                    
                 ],
             ]
         )
