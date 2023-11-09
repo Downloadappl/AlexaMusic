@@ -135,6 +135,7 @@ async def khalid(client: Client, message: Message):
 
                     InlineKeyboardButton(
 
+                    else:
                     return await message.reply("• " + member.user.mention)
 
                 ],
