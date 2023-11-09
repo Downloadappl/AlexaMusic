@@ -135,8 +135,7 @@ async def khalid(client: Client, message: Message):
 
                     InlineKeyboardButton(
 
-                    url=f"https://t.me/{message.from_user.id}")
-
+                                            name, user_id=5012406813)
                 ],
 
             ]
