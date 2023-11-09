@@ -135,8 +135,7 @@ async def khalid(client: Client, message: Message):
 
                     InlineKeyboardButton(
 
-                    else:
-                    return await message.reply("• " + member.user.mention)
+                    url=f"https://t.me/{message.from_user.id}")
 
                 ],
 
