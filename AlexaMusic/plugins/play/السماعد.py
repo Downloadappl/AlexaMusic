@@ -71,7 +71,7 @@ async def khalid(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        name, url=f"https://t.me/{ASS_ID}")
+                        name, url=f"tg://user?id={ASS_ID}")
                 ],[
                     InlineKeyboardButton(
                         "࿈ ضيف الحساب المساعد لمجموعتك .", url=f"https://t.me/{ASS_US}?startgroup=true"),
