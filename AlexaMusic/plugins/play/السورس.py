@@ -15,18 +15,18 @@ from random import  choice, randint
 
                 
 @app.on_message(
-    command(["","‹ السورس ›"," ",""])
+    command(["سورس","‹ السورس ›"," ","السورس"])
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/dec37b1ceff618f25a39a.jpg",
+        photo=f"https://telegra.ph/file/89a5af2a6c71dcd0cf555.jpg",
         caption=f"""**ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ . .
- [sᴏᴜʀᴄᴇ ғᴏх.](https://t.me/H_M_Dr)**""",
+ [sᴏᴜʀᴄᴇ ɴᴇxᴛ ⛧](https://t.me/H_M_Dr)**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "‹ المطور ›", url=f"https://t.me/IIIlIIv"), 
+                        "", url=f"https://t.me/IIIlIIv"), 
                     
                 
                     InlineKeyboardButton(
