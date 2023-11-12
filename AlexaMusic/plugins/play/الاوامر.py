@@ -16,7 +16,7 @@ from pyrogram.errors import MessageNotModified
 
 
 @app.on_message(
-    command("الاوامر")
+    command("")
 )
 async def cr_source(client: Client, message: Message):
     await message.reply_photo(
