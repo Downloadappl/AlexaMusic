@@ -15,7 +15,7 @@ from pyrogram.types import (
 from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
-REPLY_MESSAGE = "**- لك هلا ضلعي وهاي الاعدادات لعيونك**"
+REPLY_MESSAGE = "**- اهلا بك عزيزي اليك قائمه الاوامر**"
 
 
 
@@ -24,9 +24,9 @@ REPLY_MESSAGE_BUTTONS = [
 
          [
 
-             ("‹ السورس ›"),                   
+             ("‹ اوامر التشغيل ›"),                   
 
-             ("")
+             ("‹ اوامر التفعيل ›")
 
 
 
@@ -35,9 +35,9 @@ REPLY_MESSAGE_BUTTONS = [
 
           [
 
-             ("‹ اوامر التشغيل ›"),
+             ("‹ اوامر التسليه ›"),
 
-             ("‹ اوامر التفعيل ›")
+             ("‹ السورس ›")
 
           ],
 
@@ -54,7 +54,7 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^الاعدادات$"))
+@app.on_message(filters.regex("^الاوامر$"))
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
@@ -65,7 +65,7 @@ async def cpanel(_, message: Message):
 
 @app.on_message(filters.regex("اخفاء الازرار") & filters.group)
 async def down(client, message):
-          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- اذا تريد تطلعها مرة ثانية اكتب الاعدادات**", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- اذا تريد تطلعها مرة ثانية اكتب الاوامر**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
 @app.on_message(filters.group & command("طريقة ربط القنوات"))
