@@ -18,7 +18,7 @@ from random import  choice, randint
 
 
 
-@app.on_message(command(["غنيلي", "", "غ", ""]))
+@app.on_message(command(["غنيلي", "‹ غنيلي ›", "غ", ""]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/proxMusicl/{rl}"
@@ -66,11 +66,11 @@ async def ihd(client: Client, message: Message):
     )
 
 
-@app.on_message(command(["متحركه. 🎬", "متحركه"]))
+@app.on_message(command(["‹ متحركه ›", "متحركه"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/GifWaTaN/{rl}"
-    await client.send_animation(message.chat.id,url,caption="↯ : تم اختيار ملصق اليك",parse_mode="html",
+    await client.send_animation(message.chat.id,url,caption="↯ : تم اختيار المتحركه اليك",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -81,7 +81,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(command(["اقتباسات", "اقتباس"]))
+@app.on_message(command(["‹ اقتباسات ›", "اقتباس"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/LoreBots9/{rl}"
@@ -171,7 +171,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(command(["فيلم", "فيلمك. 🎥"]))
+@app.on_message(command(["فيلم", "‹ فيلم ›"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(1,50)
     url = f"https://t.me/gyigkk/{rl}"
