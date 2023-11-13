@@ -15,7 +15,7 @@ from pyrogram.types import (
 from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
-REPLY_MESSAGE = "**- اهلا بك عزيزي اليك قائمه الاوامر**"
+REPLY_MESSAGE = ""
 
 
 
