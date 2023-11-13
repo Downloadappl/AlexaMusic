@@ -14,10 +14,9 @@ from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, ap
 async def maker(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/cfa4e284f833555d0d168.jpg",
-        caption=f"""**
-- اوامر التشغيل اتبع مايلي
- — — — — — — — — — — 
-
+        caption=f"""**- اوامر التشغيل اتبع مايلي
+        
+ [— — — — — — — — — —](https://telegra.ph/file/6a6cf73ddb4fe08ca90e2.jpg)
 ◇︰ تشغيل أو شغل : لبدء تشغيل الاغاني .
 
 ◇︰ بينج : لقياس سرعة النت في البوت .
