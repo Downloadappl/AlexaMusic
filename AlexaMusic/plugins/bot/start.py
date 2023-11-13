@@ -194,7 +194,7 @@ async def start_comm(client, message: Message, _):
             sender_name = message.from_user.first_name
             return await app.send_message(
                 config.LOG_GROUP_ID,
-                f"قام بأرسال بدء الى البوت{message.from_user.mention}\n\n**الايدي :** {sender_id}\n**المعرف :** {sender_name}",
+                f"قام بأرسال بدء الى البوت - {message.from_user.mention}\n\n**الايدي :** {sender_id}\n**المعرف :** {sender_name}",
             )
 
 
