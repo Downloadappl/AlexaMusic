@@ -93,7 +93,7 @@ async def maker(client: Client, message: Message):
     )
 
 @app.on_message(
-    command(["","‹ اوامر التسليه ›"])
+    command(["",""])
     & filters.group
     & ~filters.edited
 )
