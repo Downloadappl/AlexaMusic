@@ -30,7 +30,7 @@
       },
       "START_IMG_URL": {
         "description": "صورة الستارت",
-        "value": "",
+        "value": "https://telegra.ph/file/911a6335a2e3c796659b1.jpg",
         "required": true
       },
       "OWNER_ID": {
@@ -58,6 +58,17 @@
         "value": "",
         "required": false
       },
+      "ASS_US": {
+        "description": "يوزر حساب المساعد",
+        "value": "",
+        "required": false
+      },
+      "ASS_ID": {
+        "description": "ايدي حساب المساعد",
+        "value": "",
+        "required": false
+      },
+
       "HEROKU_APP_NAME": {
         "description": "اسم التطبيق اول فار",
         "value": "",
@@ -65,7 +76,7 @@
       },
       "LOG_GROUP_ID": {
         "description": "ايدي كروب السجل حطه",
-        "value": "-100",
+        "value": "-1002015243380",
         "required": true
       }
     },
