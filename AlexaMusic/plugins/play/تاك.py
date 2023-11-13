@@ -38,10 +38,10 @@ async def gak_owne(client: Client, message: Message):
    
 
    
-@app.on_message(command(["اسمي", "اسمي اي"]) & filters.group )
+@app.on_message(command(["اسمي","‹ اسمي ›"]) & filters.group )
 async def vgdg(client: Client, message: Message):
     await message.reply_text(
-        f"""❤️‍🔥 اسمك »»  {message.from_user.mention()}""") 
+        f"""**- اسمك ›**  {message.from_user.mention()}""") 
 
         
 
