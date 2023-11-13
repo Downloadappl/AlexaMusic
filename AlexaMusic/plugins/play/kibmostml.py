@@ -144,7 +144,7 @@ async def ihd(client: Client, message: Message):
 @app.on_message(command(["‹ قران ›", "قران"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(1,90)
-    url = f"https://t.me/opuml/{rl}"
+    url = f"https://t.me/lllIIlIllIlIIlI/{rl}"
     await client.send_voice(message.chat.id,url,caption="↯ : تم اختيار ايـه قرآنيه اليك",parse_mode="html",
     reply_markup=InlineKeyboardMarkup(
             [
