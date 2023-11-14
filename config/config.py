@@ -75,6 +75,18 @@ VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "3"))
 
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "30"))
 
+CHANNEL_SUDO = getenv(
+    "CHANNEL_SUDO", "H_M_Dr"
+)  # معرف قناتك بدون @
+
+YAFA_NAME = getenv(
+    "YAFA_NAME", "‹ سورس نيكست ›"
+)  # اسم قناتك
+
+YAFA_CHANNEL = getenv(
+   " YAFA_CHANNEL", "https://t.me/H_M_Dr"
+)  # رابط قناتك
+
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "25"))
 
 CLEANMODE_DELETE_MINS = int(getenv("CLEANMODE_MINS", "5"))
