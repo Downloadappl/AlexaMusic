@@ -54,7 +54,7 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^/start$"))
+@app.on_message(filters.regex("^الاوامر$"))
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
@@ -65,7 +65,7 @@ async def cpanel(_, message: Message):
 
 @app.on_message(filters.regex("‹ قفل الكيبورد ›") & filters.group)
 async def down(client, message):
-          m = await message.reply("**- بخدمتك حجي خفيت الكيبورد\n- اذا تريد تطلعها مرة ثانية اكتب /start**", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("**- تم اغلاق الكيبورد بنجاح**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
 @app.on_message(filters.group & command("طريقة ربط القنوات"))
