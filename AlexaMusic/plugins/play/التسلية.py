@@ -101,7 +101,7 @@ REPLY_MESSAGE_BUTTONS = [
 
           [
      
-             ("الاوامر")
+             ("اخفاء الازرار")
 
           ]
 
@@ -123,7 +123,7 @@ async def cpanel(_, message: Message):
 
 @app.on_message(filters.regex("اخفاء الازرار") & filters.group)
 async def down(client, message):
-          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- اذا تريد تطلعها مرة ثانية اكتب الاوامر**", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("**- تم اخفاء الازرار بنجاح**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
 @app.on_message(filters.group & command("طريقة ربط القنوات"))
