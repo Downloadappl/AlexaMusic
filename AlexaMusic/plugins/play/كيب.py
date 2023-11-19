@@ -15,7 +15,7 @@ from pyrogram.types import (
 from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
-REPLY_MESSAGE = "**- اهلا بك عزيزي اليك قائمه الاوامر**"
+REPLY_MESSAGE = "**- اهلا بك عزيزي اليك كيبورد الاعضاء**"
 
 
 
@@ -43,7 +43,7 @@ REPLY_MESSAGE_BUTTONS = [
 
           [
 
-             ("اخفاء الازرار")
+             ("‹ قفل الكيبورد ›")
 
           ]
 
@@ -54,7 +54,7 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^الاوامر$"))
+@app.on_message(filters.regex("^/start$"))
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
@@ -63,9 +63,9 @@ async def cpanel(_, message: Message):
               reply_markup=reply_markup
         )
 
-@app.on_message(filters.regex("اخفاء الازرار") & filters.group)
+@app.on_message(filters.regex("‹ قفل الكيبورد ›") & filters.group)
 async def down(client, message):
-          m = await message.reply("**- بخدمتك حجي خفيت الازرار\n- اذا تريد تطلعها مرة ثانية اكتب الاوامر**", reply_markup= ReplyKeyboardRemove(selective=True))
+          m = await message.reply("**- بخدمتك حجي خفيت الكيبورد\n- اذا تريد تطلعها مرة ثانية اكتب /start**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
 @app.on_message(filters.group & command("طريقة ربط القنوات"))
