@@ -1,0 +1,38 @@
+services:
+  # A Docker web service
+  - type: web
+    name: FilterBot
+    env: python
+    startCommand: python3 main.py
+    buildCommand: pip3 install -U -r requirements.txt
+    repo: https://github.com/ZZZ7iZ/AlexaMusic # optional
+    region: oregon # optional (defaults to oregon)
+    plan: free # optional (defaults to starter)
+    branch: Professor-99 # optional (defaults to master)
+    numInstances: 1 # optional (defaults to 1)
+    healthCheckPath: /
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMINS
+        sync: false
+      - key: START_IMG_URL
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: MONGO_DB_URI
+        sync: false
+      - key: MUSIC_BOT_NAME
+        sync: false
+      - key: STRING_SESSION
+        sync: false
+      - key: ASS_US
+        sync: false
+      - key: ASS_ID
+        sync: false
+      - key: LOG_GROUP_ID
+        sync: false
