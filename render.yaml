@@ -18,8 +18,6 @@ services:
         sync: false
       - key: BOT_TOKEN
         sync: false
-      - key: ADMINS
-        sync: false
       - key: START_IMG_URL
         sync: false
       - key: OWNER_ID
@@ -29,10 +27,6 @@ services:
       - key: MUSIC_BOT_NAME
         sync: false
       - key: STRING_SESSION
-        sync: false
-      - key: ASS_US
-        sync: false
-      - key: ASS_ID
         sync: false
       - key: LOG_GROUP_ID
         sync: false
