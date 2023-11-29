@@ -43,7 +43,29 @@ async def vgdg(client: Client, message: Message):
     await message.reply_text(
         f"""**- اسمك ›**  {message.from_user.mention()}""") 
 
+
+
+@app.on_message(command("انذار", ""))
+async def tom(client, message):
+    me = message.from_user.id
+    user_id = message.reply_to_message.from_user.id
+    chat_id = message.chat.id
+    if chat_id not in ahmed:
+        ahmed[chat_id] = {}
+    if user_id not in ahmed[chat_id]:
+        ahmed[chat_id][user_id] = 1
+    else:
+        ahmed[chat_id][user_id] += 1
+    await message.reply_text(f"{ahmed[chat_id][user_id]}")
+    if ahmed[chat_id][user_id] >= tom_max:
+        try:
+        	del ahmed[chat_id][user_id]
+        	await client.ban_chat_member(chat_id, user_id)
+        	await message.reply("تم طرد العضو")   	
+        except:
+        	await message.reply("ماعرف اطرده والله ")
         
+
 
 array = []
 @app.on_message(command(["@all", "تاك","تاك للكل"]) & ~filters.private)
