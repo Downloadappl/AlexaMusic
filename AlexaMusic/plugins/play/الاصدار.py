@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 
 
 @app.on_message(
-    command(["الاصدار"])
+    command(["."])
   
 )
 async def bkouqw(client: Client, message: Message):
