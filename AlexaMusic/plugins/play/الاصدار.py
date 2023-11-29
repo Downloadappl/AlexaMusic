@@ -24,26 +24,12 @@ from dotenv import load_dotenv
   
 )
 async def bkouqw(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/d3bed0d2eb1fd5a154369.jpg",
-        caption=f"""**اهلا بك عزيزي {message.from_user.mention} في اصدار سورس فوكس
-★᚜ اسم سورس : فوكس
-
-★᚜ نوع : ميوزك
-
-★᚜ اللغه : اللغه العربيه ويدعم الانجليزيه 
-
-★᚜ مجال العمل : بوتات تشغيل الموسيقى في الاتصال
-★᚜ نظام التشغيل : Fox بوت ميوزك
-★᚜ الاصدار 1.0
-★᚜ تاريخ التأسيس : 2023/11/20
-
-★᚜ مؤسس فوكس : [ ﻿حِــۘـمَــٓد | 🇮🇶](https://t.me/IIIlIIv)""",
+        caption=f"""**[تحديثات بلاك 🧚‍♀️](t.me/H_M_Dr)**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "sᴏᴜʀᴄᴇ ғᴏх.", url=f"https://t.me/H_M_Dr"), 
+                        "🧚‍♀️", url=f"https://t.me/H_M_Dr"), 
                  ],[
                  InlineKeyboardButton(
                         "", callback_data="hpdtsnju"),
