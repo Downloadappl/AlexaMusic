@@ -4,7 +4,7 @@ from AlexaMusic import app as Client
 from AlexaMusic import app
 
 
-@Client.on_callback_query(filters.regex("arbic"))
+@Client.on_callback_query(filters.regex("/start"))
 async def arbic(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
