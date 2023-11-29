@@ -23,7 +23,7 @@ from dotenv import load_dotenv
     command(["."])
   
 )
-async def bkouqw(client: Client, message: Message):
+async def bkouqw(client: Client, message: Message)
         caption=f"""**[تحديثات بلاك 🧚‍♀️](t.me/H_M_Dr)**""",
         reply_markup=InlineKeyboardMarkup(
             [
