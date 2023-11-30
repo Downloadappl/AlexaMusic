@@ -133,7 +133,7 @@ async def dowhmo(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🧚", url=f"https://t.me/H_M_Dr"),
+                        "", url=f"https://t.me/H_M_Dr"),
                 ],[
                     InlineKeyboardButton(
                         "", url=f"https://t.me/NKQbot?startgroup=true"),
