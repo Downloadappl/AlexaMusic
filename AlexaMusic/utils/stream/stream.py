@@ -16,7 +16,7 @@ from pyrogram.types import InlineKeyboardMarkup
 
 import config
 from AlexaMusic import Carbon, YouTube, app
-from AlexaMusic.core.call import Yukki
+from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import (add_active_chat,
                                        add_active_video_chat,
