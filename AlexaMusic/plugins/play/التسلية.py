@@ -126,17 +126,17 @@ async def down(client, message):
           m = await message.reply("**- تم اخفاء الازرار بنجاح**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
-@app.on_message(filters.group & command("طريقة ربط القنوات"))
+@app.on_message(filters.group & command("."))
 async def dowhmo(client: Client, message: Message):
-    await message.reply_text("""- هلا والله\n◌**عشان تشغل بالقنوات لازم تسوي بعض الخطوات وهي◌** :\n\n1 -› تدخل البوت قناتك وترفعه مشرف\n2 -› ترجع للقروب وتكتب { **ربط + يوزر القناة** }\n3 -› **اضغط على زر اوامر التشغيل عشان تعرف كيف تشغل**..""",
+    await message.reply_text("""[تحديثات بلاك 🧚](https://t.me/H_M_Dr)""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "", url=f"https://t.me/UUUOLC"),
+                        "🧚", url=f"https://t.me/H_M_Dr"),
                 ],[
                     InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/NKQbot?startgroup=true"),
+                        "", url=f"https://t.me/NKQbot?startgroup=true"),
                 ],
             ]
         ),
