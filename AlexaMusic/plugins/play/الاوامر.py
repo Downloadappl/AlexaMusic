@@ -12,9 +12,6 @@ from strings.filters import command
 from config import OWNER_ID
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from pyrogram.errors import MessageNotModified
-import asyncio
-from pyrogram import Client, filters
-from datetime import datetime
 
 
 @app.on_message(
@@ -207,35 +204,12 @@ async def cr_usage(_, callback_query: CallbackQuery):
         )
     )
   
-@app.on_message(filters.member_joined)
-async def get_chat_info(chat, already=False):
-    if not already:
-        chat = await app.get_chat(chat)
-    chat_id = chat.id
-    members = chat.members_count
-	await message.reply_text(f"""
-● نورت عمري ♥♡
-{message.from_user.first_name}
-●  يجب احترام الادمنية
-●  الالتزام بالقوانين في الوصف
-●  الاعضاء  {members} 
-""")
-
-               ]
-            ]
-        )
-    )
-  
-@app.on_message(filters.member_left)
-async def leftmem(chat):
-    await message.reply_text(f"""
-    - الاسم «{ message.from_user.first_name}» 
-    
- - قام بغادرة المجموعة الان
-""")
-
-               ]
-            ]
-        )
-    )
-  
+@app.on_message(filters.new_chat_members)
+async def wel__come(client: Client, message: Message):
+ chatid= message.chat.id
+ await client.send_message(text=f"- نورت ياا فرتكهه😘🤝️ {message.from_user.mention}\n│ \n└ʙʏ في {message.chat.title}",chat_id=chatid)
+ 
+@app.on_message(filters.left_chat_member)
+async def good_bye(client: Client, message: Message):
+ chatid= message.chat.id
+ await client.send_message(text=f"- مشيت ليه يوحش يلا بسلامات🥲👋\n│ \n└ʙʏ  {message.from_user.mention} ",chat_id=chatid)
