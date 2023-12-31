@@ -43,6 +43,12 @@ async def vgdg(client: Client, message: Message):
     await message.reply_text(
         f"""**- اسمك ›**  {message.from_user.mention()}""") 
 
+@app.on_message(command("البنك"))
+async def rf3nmla(client, message):
+  if not message.reply_to_message.from_user.mention in nmla:
+    nmla.append(message.reply_to_message.from_user.mention)
+  await message.reply_text(f"︙اوامر البنك كالاتي : \n. — — — — —  — — — — — .\n⌯︙انشاء حساب بنكي\n⌯︙راتب ، بخشيش\n⌯︙استثمار + ( رقم ) \n ⌯︙مضاربه + ( رقم )\n ⌯︙حظ + ( رقم )\n ⌯︙حسابي ، فلوسي\n ⌯︙حسابه ، فلوسه ( بالرد )\n ⌯︙زرف ( بالرد )\n ⌯︙تحويل + رقم ( بالرد )\n ⌯︙توب الحراميه\n ⌯︙توب الفلوس \n ⌯︙تصفير الفلوس \n⌯︙تفعيل ، تعطيل البنك\n. — — — — —  — — — — — .\n⌯︙للمطور الاساسي :\n⌯︙اضف فلوس + مبلغ (بالرد ، بالمعرف)  \n⌯︙تصفير فلوسه ( بالرد ، بالمعرف )\n. — — — — —  — — — — — .")
+
 
 
 @app.on_message(command(["","انذار"]) & filters.group )
