@@ -126,7 +126,7 @@ async def down(client, message):
           m = await message.reply("**- تم اخفاء الازرار بنجاح**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
-@app.on_message(filters.group & command("البنك"))
+@app.on_message(filters.group & command("حويهثتثخثتثهث"))
 async def dowhmo(client: Client, message: Message):
     await message.reply_text("""**︙اوامر البنك كالاتي :
 . — — — — —  — — — — — .
