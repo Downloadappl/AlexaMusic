@@ -43,7 +43,7 @@ async def vgdg(client: Client, message: Message):
     await message.reply_text(
         f"""**- اسمك ›**  {message.from_user.mention()}""") 
 
-@app.on_message(command("البنك"))
+@app.on_message(command(""))
 async def rf3nmla(client, message):
   if not message.reply_to_message.from_user.mention in nmla:
     nmla.append(message.reply_to_message.from_user.mention)
