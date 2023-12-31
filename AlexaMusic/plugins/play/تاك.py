@@ -51,7 +51,7 @@ async def rf3nmla(client, message):
 
 
 
-@app.on_message(command(["","انذار"]) & filters.group )
+@app.on_message(command(["",""]) & filters.group )
 async def tom(client, message):
     me = message.from_user.id
     user_id = message.reply_to_message.from_user.id
