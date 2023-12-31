@@ -350,7 +350,7 @@ def reset_bank(client, message):
 
 
 
-@app.on_message(command('فتح لعبة البنك') & filters.create(is_sudoer))
+@app.on_message(command('تفعبل البنك') & filters.create(is_sudoer))
 def enable_bank_game(client, message):
     chat_id = message.chat.id
     bank_data = load_bank_data()
@@ -369,7 +369,7 @@ def enable_bank_game(client, message):
 
 
 
-@app.on_message(command('قفل لعبة البنك') & filters.create(is_sudoer))
+@app.on_message(command('تعطبل البنك') & filters.create(is_sudoer))
 def disable_bank_game(client, message):
     chat_id = message.chat.id
     bank_data = load_bank_data()
@@ -377,7 +377,7 @@ def disable_bank_game(client, message):
     if 'game_enabled' in bank_data:
         del bank_data['game_enabled']
         save_bank_data(bank_data)
-        client.send_message(chat_id, 'تم إيقاف لعبة البنك في المجموعة')
+        client.send_message(chat_id, 'تم تعطيل لعبة البنك في المجموعة')
     else:
         client.send_message(chat_id, 'لعبة البنك معطلة بالفعل في المجموعة')
 
