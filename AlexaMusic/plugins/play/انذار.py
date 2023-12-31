@@ -45,15 +45,3 @@ async def caesarphoto(client, message):
     photo = await client.download_media(message.chat.photo.big_file_id)
     await client.send_photo(chat_id=chat_id, photo=photo, caption=f"تم تغيير صورة المجموعه \n الي غيرها :{message.from_user.mention}")
 
-
-@app.on_message(filters.command("بلاك"))
-async def StartMsg(_,msg):
- await msg.reply("مرحبًا: بوت الذكاء الاصطناعي")
-
-@app.on_message()
-async def echo(bot, msg):
-    a = msg.text
-    s = Ai(query = a)
-    await bot.send_message(chat_id=msg.chat.id, text=s.chat())    
-    
-app.run()
