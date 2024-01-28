@@ -1,35 +1,44 @@
-#
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2024 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
+""""
+TheTeamAlexa is a project of Telegram bots with variety of purposes.
+Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
+
+This program is free software: you can redistribute it and can modify
+as you want or you can collabe if you have new ideas.
+"""
 
 
 import os
 import sys
+import logging
 from os import listdir, mkdir
-
-from ..logging import LOGGER
 
 
 def dirr():
-    if "assets" not in listdir():
-        LOGGER(__name__).warning(
-            f"Assets Folder not Found. Please clone repository again."
+    assets_folder = "assets"
+    downloads_folder = "downloads"
+    cache_folder = "cache"
+
+    if assets_folder not in listdir():
+        logging.warning(
+            f"{assets_folder} Folder not Found. Please clone repository again."
         )
         sys.exit()
+
     for file in os.listdir():
-        if file.endswith(".jpg"):
+        if file.endswith(".jpg") or file.endswith(".jpeg"):
             os.remove(file)
-    for file in os.listdir():
-        if file.endswith(".jpeg"):
-            os.remove(file)
-    if "downloads" not in listdir():
-        mkdir("downloads")
-    if "cache" not in listdir():
-        mkdir("cache")
-    LOGGER(__name__).info("Directories Updated.")
+
+    if downloads_folder not in listdir():
+        mkdir(downloads_folder)
+
+    if cache_folder not in listdir():
+        mkdir(cache_folder)
+
+    logging.info("Directories Updated.")
+
+
+if __name__ == "__main__":
+    dirr()
