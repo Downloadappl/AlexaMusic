@@ -1,12 +1,13 @@
-#
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2024 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
+""""
+TheTeamAlexa is a project of Telegram bots with variety of purposes.
+Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
+
+This program is free software: you can redistribute it and can modify
+as you want or you can collabe if you have new ideas.
+"""
 
 
 import sys
@@ -24,53 +25,60 @@ assistantids = []
 class Userbot(Client):
     def __init__(self):
         self.one = Client(
+            name="AlexaOne",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING1),
+            session_string=str(config.STRING1),
             no_updates=True,
         )
         self.two = Client(
+            name="AlexaTwo",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING2),
+            session_string=str(config.STRING2),
             no_updates=True,
         )
         self.three = Client(
+            name="AlexaThree",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING3),
+            session_string=str(config.STRING3),
             no_updates=True,
         )
         self.four = Client(
+            name="AlexaFour",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING4),
+            session_string=str(config.STRING4),
             no_updates=True,
         )
         self.five = Client(
+            name="AlexaFive",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING5),
+            session_string=str(config.STRING5),
             no_updates=True,
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"بدء تشغيل العملاء المساعدين")
+        LOGGER(__name__).info(f"Starting Assistant Clients...")
         if config.STRING1:
             await self.one.start()
             try:
                 await self.one.join_chat("Alexa_Help")
+                await self.one.join_chat("TheTeamAlexa")
+                await self.one.join_chat("Alexa_BotUpdates")
             except:
                 pass
             assistants.append(1)
             try:
                 await self.one.send_message(
                     config.LOG_GROUP_ID,
-                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
+                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
             except:
                 LOGGER(__name__).error(
-                    f"فشل حساب المساعد 1 في الوصول إلى مجموعة السجل. تأكد من إضافة مساعدك إلى مجموعة السجل الخاصة بك وترقيتك كمسؤول!"
+                    f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
                 )
                 sys.exit()
             get_me = await self.one.get_me()
@@ -86,13 +94,15 @@ class Userbot(Client):
             await self.two.start()
             try:
                 await self.two.join_chat("Alexa_Help")
+                await self.two.join_chat("TheTeamAlexa")
+                await self.two.join_chat("Alexa_BotUpdates")
             except:
                 pass
             assistants.append(2)
             try:
                 await self.two.send_message(
                     config.LOG_GROUP_ID,
-                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
+                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
             except:
                 LOGGER(__name__).error(
@@ -107,18 +117,20 @@ class Userbot(Client):
                 self.two.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.two.name = get_me.first_name
-            LOGGER(__name__).info(f"بدأ المساعد الثاني كـ {self.two.name}")
+            LOGGER(__name__).info(f"Assistant Two Started as {self.two.name}")
         if config.STRING3:
             await self.three.start()
             try:
                 await self.three.join_chat("Alexa_Help")
+                await self.three.join_chat("TheTeamAlexa")
+                await self.three.join_chat("Alexa_BotUpdates")
             except:
                 pass
             assistants.append(3)
             try:
                 await self.three.send_message(
                     config.LOG_GROUP_ID,
-                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
+                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
             except:
                 LOGGER(__name__).error(
@@ -138,13 +150,15 @@ class Userbot(Client):
             await self.four.start()
             try:
                 await self.four.join_chat("Alexa_Help")
+                await self.four.join_chat("TheTeamAlexa")
+                await self.four.join_chat("Alexa_BotUpdates")
             except:
                 pass
             assistants.append(4)
             try:
                 await self.four.send_message(
                     config.LOG_GROUP_ID,
-                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
+                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
             except:
                 LOGGER(__name__).error(
@@ -164,13 +178,15 @@ class Userbot(Client):
             await self.five.start()
             try:
                 await self.five.join_chat("Alexa_Help")
+                await self.five.join_chat("TheTeamAlexa")
+                await self.five.join_chat("Alexa_BotUpdates")
             except:
                 pass
             assistants.append(5)
             try:
                 await self.five.send_message(
                     config.LOG_GROUP_ID,
-                    "**- تم بدء تشغيل المساعد يمكنه التشغيل الان **",
+                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
             except:
                 LOGGER(__name__).error(
