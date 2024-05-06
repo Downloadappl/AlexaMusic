@@ -8,7 +8,7 @@ Copyright (c) 2024 - present Team=Alexa <https://github.com/TheTeamAlexa>
 This program is free software: you can redistribute it and modify
 as you want or you can collaborate if you have new ideas.
 """
-
+from AlexaMusic.core.userbot import Userbot
 import sys
 from pyrogram import Client
 import config
