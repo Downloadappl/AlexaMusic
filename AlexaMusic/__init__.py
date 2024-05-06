@@ -13,7 +13,7 @@ as you want or you can collabe if you have new ideas.
 from AlexaMusic.core.bot import AlexaBot
 from AlexaMusic.core.dir import dirr
 from AlexaMusic.core.git import git
-from AlexaMusic.core.userbot import userbot.py
+from AlexaMusic.core.userbot import Userbot
 from AlexaMusic.misc import dbb, heroku, sudo
 
 from .logging import LOGGER
