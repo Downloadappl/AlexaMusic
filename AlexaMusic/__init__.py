@@ -9,7 +9,7 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
+from .core.userbot import Userbot
 from AlexaMusic.core.bot import AlexaBot
 from AlexaMusic.core.dir import dirr
 from AlexaMusic.core.git import git
