@@ -20,7 +20,7 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-USER_OWNER = getenv("USER_OWNER","IIIlIIv")
+USER_OWNER = getenv("USER_OWNER","IC_19")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "900"))
 
